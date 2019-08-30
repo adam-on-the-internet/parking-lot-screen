@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'parking-lot-screen';
+
+  public changeBackground() {
+    document.body.style.backgroundImage = `url("assets/3.jpg")`;
+  }
 }
