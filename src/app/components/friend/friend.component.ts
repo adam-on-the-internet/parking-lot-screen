@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UniverseService } from 'src/app/services/universe.service';
 import { Friend } from 'src/app/models/Friend.model';
 
@@ -8,11 +8,10 @@ import { Friend } from 'src/app/models/Friend.model';
   styleUrls: ['./friend.component.css']
 })
 export class FriendComponent implements OnInit {
-  public friendCode;
+  @Input() public friend: Friend;
+
   public speed;
   public animation;
-  public friend: Friend;
-  public src: string;
   public ready = false;
 
   constructor(
@@ -20,11 +19,8 @@ export class FriendComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.friendCode = 1;
     this.speed = 1;
     this.animation = 1;
-    this.friend = this.universeService.getFriendByCode(this.friendCode);
-    this.src = this.friend.src;
     this.ready = true;
   }
 

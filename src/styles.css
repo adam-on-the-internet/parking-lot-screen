@@ -45,7 +45,7 @@ img {
   }
 }
 
-.speed2 {
+.speed-2 {
   animation: speed2animation 8s infinite;
 }
 @keyframes speed2animation {
@@ -57,7 +57,7 @@ img {
   }
 }
 
-.speed3 {
+.speed-3 {
   animation: speed3animation 10s infinite;
 }
 @keyframes speed3animation {
@@ -69,7 +69,7 @@ img {
   }
 }
 
-.speed4 {
+.speed-4 {
   animation: speed4animation 10s infinite;
 }
 @keyframes speed4animation {
@@ -81,7 +81,7 @@ img {
   }
 }
 
-.speed5 {
+.speed-5 {
   animation: speed5animation 11s infinite;
 }
 @keyframes speed5animation {
@@ -93,7 +93,7 @@ img {
   }
 }
 
-.speed6 {
+.speed-6 {
   animation: speed6animation 20s infinite;
 }
 @keyframes speed6animation {
@@ -104,7 +104,7 @@ img {
     left: 1700px;
   }
 }
-.speed7 {
+.speed-7 {
   animation: speed7animation 18s infinite;
 }
 @keyframes speed7animation {
@@ -116,7 +116,7 @@ img {
   }
 }
 
-.speed8 {
+.speed-8 {
   animation: speed8animation 7s infinite;
 }
 @keyframes speed8animation {
@@ -128,7 +128,7 @@ img {
   }
 }
 
-.speed9 {
+.speed-9 {
   animation: speed9animation 10s infinite;
 }
 @keyframes speed9animation {
@@ -140,7 +140,7 @@ img {
   }
 }
 
-.speed10 {
+.speed-10 {
   animation: speed10animation 15s infinite;
 }
 @keyframes speed10animation {
@@ -152,7 +152,7 @@ img {
   }
 }
 
-.speed11 {
+.speed-11 {
   animation: speed11animation 9s infinite;
 }
 @keyframes speed11animation {
@@ -164,7 +164,7 @@ img {
   }
 }
 
-.speed12 {
+.speed-12 {
   animation: speed12animation 16s infinite;
 }
 @keyframes speed12animation {
@@ -176,7 +176,7 @@ img {
   }
 }
 
-.speed13 {
+.speed-13 {
   animation: speed13animation 25s infinite;
 }
 @keyframes speed13animation {
@@ -188,7 +188,7 @@ img {
   }
 }
 
-.speed14 {
+.speed-14 {
   animation: speed14animation 10s infinite;
 }
 @keyframes speed14animation {
@@ -200,7 +200,7 @@ img {
   }
 }
 
-.speed15 {
+.speed-15 {
   animation: speed15animation 4s infinite;
 }
 @keyframes speed15animation {
@@ -212,7 +212,7 @@ img {
   }
 }
 
-.speed16 {
+.speed-16 {
   animation: speed16animation 30s infinite;
 }
 @keyframes speed16animation {

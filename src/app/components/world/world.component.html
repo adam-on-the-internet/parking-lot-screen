@@ -1,0 +1,7 @@
+<button (click)="changeBackground()">
+  Change background
+</button>
+
+<ng-container *ngFor="let friend of universeService.currentFriends">
+  <app-friend [friend]="friend"></app-friend>
+</ng-container>

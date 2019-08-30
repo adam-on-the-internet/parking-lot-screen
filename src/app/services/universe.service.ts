@@ -7,20 +7,24 @@ import { Friend } from '../models/Friend.model';
 export class UniverseService {
   public debugMode = true;
 
-  private currentFriendDeck: Friend[] = [
+  public currentFriends: Friend = [
     {
-      name: "Wario and Waluigi Cart",
-      src: "assets/friends/friend1.png",
+      image: {
+        name: "Wario and Waluigi Kart 1",
+        src: "assets/friends/friend1.png",
+      },
+      animation: 1,
+      speed: 1,
     },
     {
-      name: "Wario and Waluigi Cart",
-      src: "assets/friends/friend1.png",
-    }
+      image: {
+        name: "Wario and Waluigi Kart 2",
+        src: "assets/friends/friend1.png",
+      },
+      animation: 2,
+      speed: 2,
+    },
   ];
 
   constructor() { }
-
-  public getFriendByCode(friendCode: number): Friend {
-    return this.currentFriendDeck[friendCode];
-  }
 }
