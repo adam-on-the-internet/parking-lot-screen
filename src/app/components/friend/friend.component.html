@@ -7,5 +7,5 @@
     <p>{{ friend.image.name }}</p>
   </div>
 
-  <img *ngIf="friend.image.src" [src]="friend.image.src" />
+  <img *ngIf="friend.image.src" [src]="'assets/friends/' + friend.image.src" />
 </div>

@@ -1,30 +1,36 @@
 import { Injectable } from '@angular/core';
-import { Friend } from '../models/Friend.model';
+import { Friend, FriendImage } from '../models/Friend.model';
+import { FRIEND_IMAGE_LIST } from '../constants/friend.constants';
+import { RandomHelper } from '../helpers/Random.helper';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UniverseService {
   public debugMode = true;
+  public friendCount = 2;
 
-  public currentFriends: Friend = [
-    {
-      image: {
-        name: "Wario and Waluigi Kart 1",
-        src: "assets/friends/friend1.png",
-      },
-      animation: 1,
-      speed: 1,
-    },
-    {
-      image: {
-        name: "Wario and Waluigi Kart 2",
-        src: "assets/friends/friend1.png",
-      },
-      animation: 2,
-      speed: 2,
-    },
-  ];
+  public currentFriends: Friend[] = [];
+  public currentFriendImageDeck: FriendImage[] = [];
 
   constructor() { }
+
+  public pickFriends() {
+    this.currentFriendImageDeck = RandomHelper.shuffle(FRIEND_IMAGE_LIST);
+
+    const newFriends: Friend[] = [];
+    for (let i = 0; i < this.friendCount; i++) {
+
+      const friendImage = this.currentFriendImageDeck[i];
+      const friendSpeed = 1;
+      const friendAnimation = 1;
+      newFriends.push({
+        image: friendImage,
+        speed: friendSpeed,
+        animation: friendAnimation,
+      });
+    }
+
+    this.currentFriends = newFriends;
+  }
 }

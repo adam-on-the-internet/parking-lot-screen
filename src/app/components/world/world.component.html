@@ -2,6 +2,11 @@
   Change background
 </button>
 
+<button (click)="universeService.pickFriends()">
+  Pick friends
+</button>
+
 <ng-container *ngFor="let friend of universeService.currentFriends">
+  {{ friend | json }}
   <app-friend [friend]="friend"></app-friend>
 </ng-container>

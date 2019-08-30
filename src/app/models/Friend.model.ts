@@ -10,4 +10,5 @@ export interface Friend {
 export interface FriendImage {
   src: string;
   name: string;
+  tags: string[];
 }
