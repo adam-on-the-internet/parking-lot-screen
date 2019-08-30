@@ -7,9 +7,6 @@ import { UniverseService } from 'src/app/services/universe.service';
   styleUrls: ['./world.component.css']
 })
 export class WorldComponent implements OnInit {
-  Arr = Array;
-  num: number = 20;
-
   constructor(
     public universeService: UniverseService,
   ) { }
@@ -18,6 +15,6 @@ export class WorldComponent implements OnInit {
   }
 
   public changeBackground() {
-    document.body.style.backgroundImage = `url("assets/3.jpg")`;
+    this.universeService.pickBackground();
   }
 }

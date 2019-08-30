@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Friend, FriendImage } from '../models/Friend.model';
 import { FRIEND_IMAGE_LIST } from '../constants/friend.constants';
 import { RandomHelper } from '../helpers/Random.helper';
+import { DomHelper } from '../helpers/Dom.helper';
+import { LOCATIONS_DECK } from '../constants/location.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +17,9 @@ export class UniverseService {
 
   public currentFriends: Friend[] = [];
   public currentFriendImageDeck: FriendImage[] = [];
+
+  public currentLocation;
+  public currentLocationDeck: string[] = [];
 
   constructor() { }
 
@@ -35,5 +40,11 @@ export class UniverseService {
     }
 
     this.currentFriends = newFriends;
+  }
+
+  public pickBackground() {
+    this.currentLocationDeck = RandomHelper.shuffle(LOCATIONS_DECK);
+    this.currentLocation = "assets/locations/" + this.currentLocationDeck[0];
+    DomHelper.setBackground(this.currentLocation);
   }
 }
