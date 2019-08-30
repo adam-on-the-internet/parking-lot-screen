@@ -13,8 +13,4 @@ export class WorldComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  public changeBackground() {
-    this.universeService.pickBackground();
-  }
 }

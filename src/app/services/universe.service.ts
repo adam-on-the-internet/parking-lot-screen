@@ -11,6 +11,7 @@ import { LOCATIONS_DECK } from '../constants/location.constants';
 export class UniverseService {
   public debugMode = true;
   public friendCount = 2;
+  public secondsPerScene = 2;
 
   public availableSpeeds = 16;
   public availableAnimations = 6;
@@ -21,7 +22,12 @@ export class UniverseService {
   public currentLocation;
   public currentLocationDeck: string[] = [];
 
-  constructor() { }
+  constructor() {
+    setInterval(() => {
+      this.pickFriends();
+      this.pickBackground();
+    }, this.secondsPerScene * 1000);
+  }
 
   public pickFriends() {
     this.currentFriendImageDeck = RandomHelper.shuffle(FRIEND_IMAGE_LIST);

@@ -1,11 +1,7 @@
 <div
-  class="friend debug-friend"
+  class="friend"
   *ngIf="ready"
   [ngClass]="['animation-' + friend.animation, 'speed-' + friend.speed]"
 >
-  <div class="debug-message">
-    <p>{{ friend.image.name }}</p>
-  </div>
-
   <img *ngIf="friend.image.src" [src]="'assets/friends/' + friend.image.src" />
 </div>
