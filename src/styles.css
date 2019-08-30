@@ -20,12 +20,20 @@ img {
   bottom: 0;
   right: 0;
   width: 100px;
-  text-align:right;
+  text-align: right;
   background: white;
 }
 
+.debug-message {
+  color: black;
+}
+
+.debug-friend {
+  background-color: rgb(131, 218, 218);
+}
+
 /* speeds */
-.speed1 {
+.speed-1 {
   animation: speed1animation 20s infinite;
 }
 @keyframes speed1animation {
@@ -217,21 +225,21 @@ img {
 }
 
 /* // animations */
-.animation1 {
+.animation-1 {
   animation-timing-function: linear;
 }
-.animation2 {
+.animation-2 {
   animation-timing-function: ease;
 }
-.animation3 {
+.animation-3 {
   animation-timing-function: ease-in;
 }
-.animation4 {
+.animation-4 {
   animation-timing-function: ease-out;
 }
-.animation5 {
+.animation-5 {
   animation-timing-function: ease-in-out;
 }
-.animation6 {
+.animation-6 {
   animation-timing-function: ease-in-out;
 }
