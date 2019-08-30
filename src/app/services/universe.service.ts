@@ -10,6 +10,9 @@ export class UniverseService {
   public debugMode = true;
   public friendCount = 2;
 
+  public availableSpeeds = 16;
+  public availableAnimations = 6;
+
   public currentFriends: Friend[] = [];
   public currentFriendImageDeck: FriendImage[] = [];
 
@@ -22,8 +25,8 @@ export class UniverseService {
     for (let i = 0; i < this.friendCount; i++) {
 
       const friendImage = this.currentFriendImageDeck[i];
-      const friendSpeed = 1;
-      const friendAnimation = 1;
+      const friendSpeed = RandomHelper.pickRandomNumber(1, this.availableSpeeds);
+      const friendAnimation = RandomHelper.pickRandomNumber(1, this.availableAnimations);
       newFriends.push({
         image: friendImage,
         speed: friendSpeed,
