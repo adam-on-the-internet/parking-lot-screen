@@ -11,7 +11,7 @@ import { Scene } from '../models/Scene.model';
   providedIn: 'root'
 })
 export class UniverseService {
-  public friendCount = 3;
+  public friendCount = 5;
   public secondsPerScene = 2;
 
   public availableSpeeds = 16;
