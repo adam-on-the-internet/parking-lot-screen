@@ -142,7 +142,7 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
     tags: [],
   },
   {
-    src: "92.gif",
+    src: "91.gif",
     name: "Majora Floating",
     tags: [],
   },

@@ -45,10 +45,10 @@ export class UniverseService {
   }
 
   private describeScene(): void {
-    console.log("Built scene with:");
-    console.log(`Location: `);
+    console.log("SCENE");
+    console.log(`@`);
     console.log(this.scene.location.image.name);
-    console.log(`Friends:`);
+    console.log(`w/`);
     this.scene.friendList.forEach((friend) => {
       console.log(`${friend.image.name}`);
     });
