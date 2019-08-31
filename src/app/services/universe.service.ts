@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Friend, FriendImage } from '../models/Friend.model';
+import { Friend } from '../models/Friend.model';
 import { FRIEND_IMAGE_LIST } from '../constants/friend.constants';
 import { RandomHelper } from '../helpers/Random.helper';
 import { DomHelper } from '../helpers/Dom.helper';
 import { LOCATIONS_DECK } from '../constants/location.constants';
+import { DetailedImage } from '../models/Image.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class UniverseService {
   public availableAnimations = 6;
 
   public currentFriends: Friend[] = [];
-  public currentFriendImageDeck: FriendImage[] = [];
+  public currentFriendImageDeck: DetailedImage[] = [];
 
   public currentLocation;
   public currentLocationDeck: string[] = [];
