@@ -3,8 +3,8 @@ import { Friend } from '../models/Friend.model';
 import { FRIEND_IMAGE_LIST } from '../constants/friend.constants';
 import { RandomHelper } from '../helpers/Random.helper';
 import { DomHelper } from '../helpers/Dom.helper';
-import { LOCATIONS_DECK } from '../constants/location.constants';
 import { DetailedImage } from '../models/Image.model';
+import { LOCATION_IMAGES_DECK } from '../constants/location.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +35,6 @@ export class UniverseService {
 
     const newFriends: Friend[] = [];
     for (let i = 0; i < this.friendCount; i++) {
-
       const friendImage = this.currentFriendImageDeck[i];
       const friendSpeed = RandomHelper.pickRandomNumber(1, this.availableSpeeds);
       const friendAnimation = RandomHelper.pickRandomNumber(1, this.availableAnimations);
@@ -50,7 +49,7 @@ export class UniverseService {
   }
 
   public pickBackground() {
-    this.currentLocationDeck = RandomHelper.shuffle(LOCATIONS_DECK);
+    this.currentLocationDeck = RandomHelper.shuffle(LOCATION_IMAGES_DECK);
     this.currentLocation = "assets/locations/" + this.currentLocationDeck[0];
     DomHelper.setBackground(this.currentLocation);
   }
