@@ -1,3 +1,8 @@
-<p>
-  friend-gallery works!
-</p>
+<h1>Welcome to the Friend Gallery!</h1>
+<ol>
+  <ng-container *ngFor="let friendImage of friendImageList">
+    <li>
+      {{friendImage.name}}
+    </li>
+  </ng-container>
+</ol>
