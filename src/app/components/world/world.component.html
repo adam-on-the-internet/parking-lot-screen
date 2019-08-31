@@ -1,5 +1,5 @@
 <app-scene
-  *ngIf="worldService.world.name !== null; else startButton"
+  *ngIf="worldReady; else startButton"
 ></app-scene>
 
 <ng-template #startButton>

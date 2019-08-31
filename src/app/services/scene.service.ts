@@ -33,7 +33,7 @@ export class SceneService {
   }
 
   public switchScene(): void {
-    if (this.worldService.world.name !== null) {
+    if (this.worldService.ready) {
       this.scene = {
         friendList: this.friendService.generateFriends(),
         location: this.locationService.generateLocation(this.scene.location.index),

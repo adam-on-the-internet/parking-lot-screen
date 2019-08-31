@@ -14,11 +14,11 @@ export class LocationService {
 
   public generateLocation(currentLocationIndex: number): SceneLocation {
     let nextLocationIndex = currentLocationIndex + 1;
-    if (nextLocationIndex === this.worldService.world.locationImageDeck.length) {
+    if (nextLocationIndex === this.worldService.locationImageDeck.length) {
       nextLocationIndex = 0;
     }
     return {
-      image: this.worldService.world.locationImageDeck[nextLocationIndex],
+      image: this.worldService.locationImageDeck[nextLocationIndex],
       index: nextLocationIndex,
     };
   }

@@ -7,6 +7,10 @@ import { WorldService } from 'src/app/services/world.service';
   styleUrls: ['./world.component.css']
 })
 export class WorldComponent {
+  public get worldReady(): boolean {
+    return this.worldService.ready;
+  }
+
   constructor(
     public worldService: WorldService,
   ) { }

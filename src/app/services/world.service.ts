@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
-import { World } from '../models/World.model';
 import { RandomHelper } from '../helpers/Random.helper';
 import { FRIEND_IMAGE_LIST } from '../constants/friend.constants';
 import { LOCATION_IMAGES_DECK } from '../constants/location.constants';
+import { DetailedImage } from '../models/Image.model';
+import { BooleanHelper } from '../helpers/Boolean.helper';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WorldService {
-  public world: World = {
-    name: null,
-    locationImageDeck: [],
-    friendImageDeck: [],
-  };
+  public name: string = null;
+  public locationImageDeck: DetailedImage[] = null;
+  public friendImageDeck: DetailedImage[] = null;
 
-  constructor() {
+  public get ready(): boolean {
+    return BooleanHelper.hasValue(this.name) &&
+      BooleanHelper.hasValue(this.locationImageDeck) &&
+      BooleanHelper.hasValue(this.friendImageDeck);
   }
 
   public setupWorld(): void {
@@ -22,11 +24,9 @@ export class WorldService {
   }
 
   public setupOpenWorld(): void {
-    this.world = {
-      name: "Open World",
-      friendImageDeck: RandomHelper.shuffle(FRIEND_IMAGE_LIST),
-      locationImageDeck: RandomHelper.shuffle(LOCATION_IMAGES_DECK),
-    };
-    console.log(`Setting up ${this.world.name}...`);
+    this.name = "Open World";
+    this.friendImageDeck = RandomHelper.shuffle(FRIEND_IMAGE_LIST);
+    this.locationImageDeck = RandomHelper.shuffle(LOCATION_IMAGES_DECK);
+    console.log(`Setting up ${this.name}...`);
   }
 }
