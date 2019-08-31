@@ -26,22 +26,23 @@ export class UniverseService {
   };
 
   public world: World = {
-    name: "void world",
+    name: null,
     locationImageDeck: [],
     friendImageDeck: [],
   };
 
   constructor() {
-    this.setupWorld();
     setInterval(() => {
       this.switchScene();
     }, this.secondsPerScene * 1000);
   }
 
   public switchScene(): void {
-    this.pickFriends();
-    this.pickLocation();
-    this.describeScene();
+    if (this.world.name !== null) {
+      this.pickFriends();
+      this.pickLocation();
+      this.describeScene();
+    }
   }
 
   private describeScene(): void {
@@ -64,21 +65,40 @@ export class UniverseService {
       name: "Open World",
       friendImageDeck: RandomHelper.shuffle(FRIEND_IMAGE_LIST),
       locationImageDeck: RandomHelper.shuffle(LOCATION_IMAGES_DECK),
-    }
+    };
   }
 
   public pickFriends() {
     const newFriends: Friend[] = [];
+    console.log("picking friends");
+
     for (let i = 0; i < this.friendCount; i++) {
-      const friendIndex = RandomHelper.pickRandomNumber(0, this.world.friendImageDeck.length);
-      const friendImage = this.world.friendImageDeck[friendIndex];
-      const friendSpeed = RandomHelper.pickRandomNumber(1, this.availableSpeeds);
-      const friendAnimation = RandomHelper.pickRandomNumber(1, this.availableAnimations);
-      newFriends.push({
-        image: friendImage,
-        speed: friendSpeed,
-        animation: friendAnimation,
-      });
+      let friendIndex = RandomHelper.pickRandomNumber(0, this.world.friendImageDeck.length);
+
+      const friendToAdd: Friend = {
+        image: this.world.friendImageDeck[friendIndex],
+        speed: RandomHelper.pickRandomNumber(1, this.availableSpeeds),
+        animation: RandomHelper.pickRandomNumber(1, this.availableAnimations),
+      };
+
+      let duplicatePossible = true;
+      while (duplicatePossible) {
+        console.log(duplicatePossible);
+        const duplicateFriend = newFriends.some((friend) => {
+          return friend.image.src === friendToAdd.image.src;
+        });
+        if (duplicateFriend === undefined) {
+          duplicatePossible = false;
+        } else {
+          friendIndex++;
+          if (friendIndex === this.world.friendImageDeck.length) {
+            friendIndex = 0;
+          }
+          friendToAdd.image = this.world.friendImageDeck[friendIndex];
+        }
+      }
+
+      newFriends.push(friendToAdd);
     }
 
     this.scene.friendList = newFriends;

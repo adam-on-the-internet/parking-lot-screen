@@ -252,7 +252,7 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
     tags: [],
   },
   {
-    src: "heck-yes.jpg",
+    src: "heck-yes.jpeg",
     name: "Business Casual Cheering",
     tags: [],
   },
