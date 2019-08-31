@@ -1,1 +1,13 @@
-<app-friend-gallery></app-friend-gallery>
+<button (click)="setMode('FRIEND')">
+  Friend Gallery
+</button>
+
+<button (click)="setMode('LOCATION')">
+  Location Gallery
+</button>
+
+<p *ngIf="modeNotSet">
+  Welcome to the gallery!
+</p>
+
+<app-friend-gallery *ngIf="friendMode"></app-friend-gallery>
