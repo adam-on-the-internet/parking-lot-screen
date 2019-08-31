@@ -60,8 +60,11 @@ export class UniverseService {
   }
 
   public setupOpenWorld(): void {
-    this.world.friendImageDeck = RandomHelper.shuffle(FRIEND_IMAGE_LIST);
-    this.world.locationImageDeck = RandomHelper.shuffle(LOCATION_IMAGES_DECK);
+    this.world = {
+      name: "Open World",
+      friendImageDeck: RandomHelper.shuffle(FRIEND_IMAGE_LIST),
+      locationImageDeck: RandomHelper.shuffle(LOCATION_IMAGES_DECK),
+    }
   }
 
   public pickFriends() {
