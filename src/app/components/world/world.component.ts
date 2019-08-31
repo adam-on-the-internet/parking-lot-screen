@@ -11,6 +11,10 @@ export class WorldComponent {
     return this.worldService.ready;
   }
 
+  public get tagList(): string[] {
+    return [];
+  }
+
   constructor(
     public worldService: WorldService,
   ) { }

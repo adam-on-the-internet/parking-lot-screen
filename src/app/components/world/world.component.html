@@ -1,7 +1,13 @@
 <app-scene
-  *ngIf="worldReady; else startButton"
+  *ngIf="worldReady; else startMenu"
 ></app-scene>
 
-<ng-template #startButton>
+<ng-template #startMenu>
   <button (click)="worldService.setupWorld()">Press Button To Start</button>
+  <p>Tags:</p>
+  <ul>
+    <li>
+      Tag
+    </li>
+  </ul>
 </ng-template>
