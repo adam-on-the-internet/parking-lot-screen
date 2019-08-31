@@ -1,12 +1,9 @@
-<ng-container *ngIf="modeNotSet">
-  <button (click)="setMode('SHOW')">
-    Show Mode
-  </button>
-
-  <button (click)="setMode('GALLERY')">
-    Gallery Mode
-  </button>
-</ng-container>
+<button (click)="setMode('SHOW')" *ngIf="!showMode">
+  Show Mode
+</button>
+<button (click)="setMode('GALLERY')" *ngIf="modeNotSet">
+  Gallery Mode
+</button>
 
 <app-world *ngIf="showMode"></app-world>
 <app-gallery *ngIf="galleryMode"></app-gallery>
