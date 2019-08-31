@@ -38,8 +38,13 @@ export class UniverseService {
   public switchScene(): void {
     this.pickFriends();
     this.pickLocation();
+    this.describeScene();
+  }
+
+  private describeScene(): void {
     console.log("Built scene with:");
-    console.log(`Location: ` + this.scene.location.image.name);
+    console.log(`Location: `);
+    console.log(this.scene.location.image.name);
     console.log(`Friends:`);
     this.scene.friendList.forEach((friend) => {
       console.log(`${friend.image.name}`);
@@ -59,7 +64,8 @@ export class UniverseService {
   public pickFriends() {
     const newFriends: Friend[] = [];
     for (let i = 0; i < this.friendCount; i++) {
-      const friendImage = this.worldFriendImageDeck[i];
+      const friendIndex = RandomHelper.pickRandomNumber(0, this.worldFriendImageDeck.length);
+      const friendImage = this.worldFriendImageDeck[friendIndex];
       const friendSpeed = RandomHelper.pickRandomNumber(1, this.availableSpeeds);
       const friendAnimation = RandomHelper.pickRandomNumber(1, this.availableAnimations);
       newFriends.push({
@@ -73,7 +79,10 @@ export class UniverseService {
   }
 
   public pickLocation() {
-    const nextLocationIndex = this.scene.location.index + 1;
+    let nextLocationIndex = this.scene.location.index + 1;
+    if (nextLocationIndex === this.worldLocationImageDeck.length) {
+      nextLocationIndex = 0;
+    }
     this.scene.location = {
       image: this.worldLocationImageDeck[nextLocationIndex],
       index: nextLocationIndex,
