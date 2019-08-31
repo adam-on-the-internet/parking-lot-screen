@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UniverseService } from 'src/app/services/universe.service';
+import { WorldService } from 'src/app/services/world.service';
 
 @Component({
   selector: 'app-world',
@@ -8,10 +8,10 @@ import { UniverseService } from 'src/app/services/universe.service';
 })
 export class WorldComponent implements OnInit {
   constructor(
-    public universeService: UniverseService,
+    public worldService: WorldService,
   ) { }
 
   ngOnInit() {
-    this.universeService.setupWorld();
+    this.worldService.setupWorld();
   }
 }

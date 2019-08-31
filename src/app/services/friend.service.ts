@@ -5,6 +5,7 @@ import { AVAILABLE_SPEEDS } from '../constants/speed.constants';
 import { AVAILABLE_ANIMATIONS } from '../constants/animation.constants';
 import { WorldService } from './world.service';
 import { World } from '../models/World.model';
+import { FRIEND_COUNT } from '../constants/friend.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +20,10 @@ export class FriendService {
     private worldService: WorldService,
   ) { }
 
-  public generateFriends(friendCount: number): Friend[] {
+  public generateFriends(): Friend[] {
     const newFriends: Friend[] = [];
 
-    const newFriendImageIndexes = RandomHelper.pickMultipleRandomUniqueNumbers(0, this.world.friendImageDeck.length, friendCount);
+    const newFriendImageIndexes = RandomHelper.pickMultipleRandomUniqueNumbers(0, this.world.friendImageDeck.length, FRIEND_COUNT);
 
     newFriendImageIndexes.forEach((friendImageIndex) => {
       const friendToAdd: Friend = {
