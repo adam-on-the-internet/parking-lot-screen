@@ -12,7 +12,6 @@ export class WorldComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log("hello, world");
     this.universeService.setupWorld();
   }
 }
