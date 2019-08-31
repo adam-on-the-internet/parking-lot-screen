@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Friend } from '../models/Friend.model';
 import { FRIEND_IMAGE_LIST } from '../constants/friend.constants';
 import { RandomHelper } from '../helpers/Random.helper';
 import { DomHelper } from '../helpers/Dom.helper';
 import { LOCATION_IMAGES_DECK } from '../constants/location.constants';
-import { Scene } from '../models/Scene.model';
-import { World } from '../models/World.model';
+import { FriendService } from './friend.service';
+import { WorldService } from './world.service';
+import { SceneService } from './scene.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,31 +14,18 @@ export class UniverseService {
   public friendCount = 5;
   public secondsPerScene = 2;
 
-  public availableSpeeds = 16;
-  public availableAnimations = 6;
-
-  public scene: Scene = {
-    location: {
-      index: 0,
-      image: null,
-    },
-    friendList: [],
-  };
-
-  public world: World = {
-    name: null,
-    locationImageDeck: [],
-    friendImageDeck: [],
-  };
-
-  constructor() {
+  constructor(
+    private friendService: FriendService,
+    private worldService: WorldService,
+    private sceneService: SceneService,
+  ) {
     setInterval(() => {
       this.switchScene();
     }, this.secondsPerScene * 1000);
   }
 
   public switchScene(): void {
-    if (this.world.name !== null) {
+    if (this.worldService.world.name !== null) {
       this.pickFriends();
       this.pickLocation();
       this.describeScene();
@@ -48,9 +35,9 @@ export class UniverseService {
   private describeScene(): void {
     console.log("SCENE");
     console.log(`@`);
-    console.log(this.scene.location.image.name);
+    console.log(this.sceneService.scene.location.image.name);
     console.log(`w/`);
-    this.scene.friendList.forEach((friend) => {
+    this.sceneService.scene.friendList.forEach((friend) => {
       console.log(`${friend.image.name}`);
     });
     console.log("-----");
@@ -62,7 +49,7 @@ export class UniverseService {
   }
 
   public setupOpenWorld(): void {
-    this.world = {
+    this.worldService.world = {
       name: "Open World",
       friendImageDeck: RandomHelper.shuffle(FRIEND_IMAGE_LIST),
       locationImageDeck: RandomHelper.shuffle(LOCATION_IMAGES_DECK),
@@ -70,32 +57,18 @@ export class UniverseService {
   }
 
   public pickFriends() {
-    const newFriends: Friend[] = [];
-
-    const newFriendImageIndexes = RandomHelper.pickMultipleRandomUniqueNumbers(0, this.world.friendImageDeck.length, this.friendCount);
-
-    newFriendImageIndexes.forEach((friendImageIndex) => {
-      const friendToAdd: Friend = {
-        image: this.world.friendImageDeck[friendImageIndex],
-        speed: RandomHelper.pickRandomNumber(1, this.availableSpeeds),
-        animation: RandomHelper.pickRandomNumber(1, this.availableAnimations),
-      };
-
-      newFriends.push(friendToAdd);
-    });
-
-    this.scene.friendList = newFriends;
+    this.sceneService.scene.friendList = this.friendService.generateFriends(this.friendCount);
   }
 
   public pickLocation() {
-    let nextLocationIndex = this.scene.location.index + 1;
-    if (nextLocationIndex === this.world.locationImageDeck.length) {
+    let nextLocationIndex = this.sceneService.scene.location.index + 1;
+    if (nextLocationIndex === this.worldService.world.locationImageDeck.length) {
       nextLocationIndex = 0;
     }
-    this.scene.location = {
-      image: this.world.locationImageDeck[nextLocationIndex],
+    this.sceneService.scene.location = {
+      image: this.worldService.world.locationImageDeck[nextLocationIndex],
       index: nextLocationIndex,
     };
-    DomHelper.setBackground("assets/locations/" + this.scene.location.image.src);
+    DomHelper.setBackground("assets/locations/" + this.sceneService.scene.location.image.src);
   }
 }
