@@ -1,30 +1,37 @@
 import { Injectable } from '@angular/core';
 import { RandomHelper } from '../helpers/Random.helper';
 import { Friend } from '../models/Friend.model';
-import { AVAILABLE_SPEEDS } from '../constants/speed.constants';
-import { AVAILABLE_ANIMATIONS } from '../constants/animation.constants';
 import { WorldService } from './world.service';
-import { FRIEND_COUNT } from '../constants/friend.constants';
+import { UniverseService } from './universe.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FriendService {
 
+  private get friendsPerScene(): number {
+    return this.universeService.friendsPerScene;
+  }
+
+  private get availableFriends(): number {
+    return this.worldService.friendImageDeck.length;
+  }
+
   constructor(
     private worldService: WorldService,
+    private universeService: UniverseService,
   ) { }
 
   public generateFriends(): Friend[] {
     const newFriends: Friend[] = [];
 
-    const newFriendImageIndexes = RandomHelper.pickMultipleRandomUniqueNumbers(0, this.worldService.friendImageDeck.length, FRIEND_COUNT);
+    const newFriendImageIndexes = RandomHelper.pickMultipleRandomUniqueNumbers(0, this.availableFriends, this.friendsPerScene);
 
     newFriendImageIndexes.forEach((friendImageIndex) => {
       const friendToAdd: Friend = {
         image: this.worldService.friendImageDeck[friendImageIndex],
-        speed: RandomHelper.pickRandomNumber(1, AVAILABLE_SPEEDS),
-        animation: RandomHelper.pickRandomNumber(1, AVAILABLE_ANIMATIONS),
+        speed: RandomHelper.pickRandomNumber(1, this.universeService.availableSpeeds),
+        animation: RandomHelper.pickRandomNumber(1, this.universeService.availableAnimations),
       };
 
       newFriends.push(friendToAdd);

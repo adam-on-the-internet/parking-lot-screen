@@ -3,12 +3,12 @@ import { Scene } from '../models/Scene.model';
 import { WorldService } from './world.service';
 import { FriendService } from './friend.service';
 import { LocationService } from './location.service';
+import { UniverseService } from './universe.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SceneService {
-  private secondsPerScene = 2;
 
   public scene: Scene = {
     location: {
@@ -22,6 +22,7 @@ export class SceneService {
     private worldService: WorldService,
     private friendService: FriendService,
     private locationService: LocationService,
+    private universeService: UniverseService,
   ) {
   }
 
@@ -29,7 +30,7 @@ export class SceneService {
     this.switchScene();
     setInterval(() => {
       this.switchScene();
-    }, this.secondsPerScene * 1000);
+    }, this.universeService.secondsPerScene * 1000);
   }
 
   public switchScene(): void {

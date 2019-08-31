@@ -1,7 +1,5 @@
 import { DetailedImage } from '../models/Image.model';
 
-export const FRIEND_COUNT = 5;
-
 export const FRIEND_IMAGE_LIST: DetailedImage[] = [
   {
     src: "friend1.png",
