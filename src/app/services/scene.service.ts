@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Scene } from '../models/Scene.model';
 import { WorldService } from './world.service';
-import { DomHelper } from '../helpers/Dom.helper';
 import { FriendService } from './friend.service';
+import { LocationService } from './location.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,12 @@ export class SceneService {
   constructor(
     private worldService: WorldService,
     private friendService: FriendService,
+    private locationService: LocationService,
   ) {
+  }
+
+  public startCycle(): void {
+    this.switchScene();
     setInterval(() => {
       this.switchScene();
     }, this.secondsPerScene * 1000);
@@ -29,8 +34,11 @@ export class SceneService {
 
   public switchScene(): void {
     if (this.worldService.world.name !== null) {
-      this.pickFriends();
-      this.pickLocation();
+      this.scene = {
+        friendList: this.friendService.generateFriends(),
+        location: this.locationService.generateLocation(this.scene.location.index),
+      };
+      this.locationService.setupLocation(this.scene.location);
       this.describeScene();
     }
   }
@@ -44,21 +52,5 @@ export class SceneService {
       console.log(`${friend.image.name}`);
     });
     console.log("-----");
-  }
-
-  public pickFriends() {
-    this.scene.friendList = this.friendService.generateFriends();
-  }
-
-  public pickLocation() {
-    let nextLocationIndex = this.scene.location.index + 1;
-    if (nextLocationIndex === this.worldService.world.locationImageDeck.length) {
-      nextLocationIndex = 0;
-    }
-    this.scene.location = {
-      image: this.worldService.world.locationImageDeck[nextLocationIndex],
-      index: nextLocationIndex,
-    };
-    DomHelper.setBackground("assets/locations/" + this.scene.location.image.src);
   }
 }

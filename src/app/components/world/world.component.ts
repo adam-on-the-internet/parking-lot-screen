@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { WorldService } from 'src/app/services/world.service';
 
 @Component({
@@ -6,12 +6,8 @@ import { WorldService } from 'src/app/services/world.service';
   templateUrl: './world.component.html',
   styleUrls: ['./world.component.css']
 })
-export class WorldComponent implements OnInit {
+export class WorldComponent {
   constructor(
     public worldService: WorldService,
   ) { }
-
-  ngOnInit() {
-    this.worldService.setupWorld();
-  }
 }

@@ -1,1 +1,7 @@
-<app-scene></app-scene>
+<app-scene
+  *ngIf="worldService.world.name !== null; else startButton"
+></app-scene>
+
+<ng-template #startButton>
+  <button (click)="worldService.setupWorld()">Press Button To Start</button>
+</ng-template>
