@@ -1,14 +1,10 @@
+import { DetailedImage } from './Image.model';
+
 export interface Friend {
-  image: FriendImage;
+  image: DetailedImage;
   speed: number;
   animation: number;
   position?;
   fixed?;
   special?: boolean;
-}
-
-export interface FriendImage {
-  src: string;
-  name: string;
-  tags: string[];
 }

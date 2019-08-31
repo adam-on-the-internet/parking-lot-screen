@@ -1,7 +1,6 @@
 <div
   class="friend"
-  *ngIf="ready"
-  [ngClass]="['animation-' + friend.animation, 'speed-' + friend.speed]"
+  [ngClass]="[animationClass, speedClass]"
 >
   <img *ngIf="friend.image.src" [src]="'assets/friends/' + friend.image.src" />
 </div>
