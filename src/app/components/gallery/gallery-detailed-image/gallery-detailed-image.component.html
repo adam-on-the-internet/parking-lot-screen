@@ -1,0 +1,20 @@
+<p>{{ index + 1 }}. {{ detailedImage.name }}</p>
+<img
+  *ngIf="detailedImage.src"
+  [src]="fullSrc"
+/>
+<p>
+  <small>{{ fullSrc }}</small>
+</p>
+<p>
+  Tags:
+  <span *ngIf="detailedImage.tags.length === 0">
+    None
+  </span>
+</p>
+<ul>
+  <li *ngFor="let tag of detailedImage.tags">
+    {{ tag }}
+  </li>
+</ul>
+<hr />

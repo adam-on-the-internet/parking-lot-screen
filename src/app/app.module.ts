@@ -8,6 +8,7 @@ import { SceneComponent } from './components/scene/scene.component';
 import { UniverseComponent } from './components/universe/universe.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { FriendGalleryComponent } from './components/gallery/friend-gallery/friend-gallery.component';
+import { GalleryDetailedImageComponent } from './components/gallery/gallery-detailed-image/gallery-detailed-image.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FriendGalleryComponent } from './components/gallery/friend-gallery/frie
     SceneComponent,
     UniverseComponent,
     GalleryComponent,
-    FriendGalleryComponent
+    FriendGalleryComponent,
+    GalleryDetailedImageComponent
   ],
   imports: [
     BrowserModule

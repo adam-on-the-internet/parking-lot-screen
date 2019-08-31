@@ -1,8 +1,8 @@
 <h1>Welcome to the Friend Gallery!</h1>
-<ol>
-  <ng-container *ngFor="let friendImage of friendImageList">
-    <li>
-      {{friendImage.name}}
-    </li>
-  </ng-container>
-</ol>
+<ng-container *ngFor="let friendImage of friendImageList; let i = index">
+  <app-gallery-detailed-image
+  [detailedImage]="friendImage"
+  [index]="i"
+  [imageLibrary]="'friends'">
+  </app-gallery-detailed-image>
+</ng-container>
