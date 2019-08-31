@@ -29,4 +29,24 @@ export abstract class RandomHelper {
     }
     return randomNumber;
   }
+
+  public static pickMultipleRandomUniqueNumbers(min: number, max: number, count: number): number[] {
+    const uniqueNumbers: number[] = [];
+
+    for (let i = 0; i < count; i++) {
+      let randomNumber = this.pickRandomNumber(min, max);
+
+      while (uniqueNumbers.includes(randomNumber)) {
+        if (randomNumber === max) {
+          randomNumber = min;
+        } else {
+          randomNumber++;
+        }
+      }
+
+      uniqueNumbers.push(randomNumber);
+    }
+
+    return uniqueNumbers;
+  }
 }

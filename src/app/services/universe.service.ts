@@ -72,34 +72,17 @@ export class UniverseService {
   public pickFriends() {
     const newFriends: Friend[] = [];
 
-    for (let i = 0; i < this.friendCount; i++) {
-      let friendIndex = RandomHelper.pickRandomNumber(0, this.world.friendImageDeck.length);
+    const newFriendImageIndexes = RandomHelper.pickMultipleRandomUniqueNumbers(0, this.world.friendImageDeck.length, this.friendCount);
 
+    newFriendImageIndexes.forEach((friendImageIndex) => {
       const friendToAdd: Friend = {
-        image: this.world.friendImageDeck[friendIndex],
+        image: this.world.friendImageDeck[friendImageIndex],
         speed: RandomHelper.pickRandomNumber(1, this.availableSpeeds),
         animation: RandomHelper.pickRandomNumber(1, this.availableAnimations),
       };
 
-      // let duplicatePossible = true;
-      // while (duplicatePossible) {
-      //   console.log(duplicatePossible);
-      //   const duplicateFriend = newFriends.some((friend) => {
-      //     return friend.image.src === friendToAdd.image.src;
-      //   });
-      //   if (duplicateFriend === undefined) {
-      //     duplicatePossible = false;
-      //   } else {
-      //     friendIndex++;
-      //     if (friendIndex === this.world.friendImageDeck.length) {
-      //       friendIndex = 0;
-      //     }
-      //     friendToAdd.image = this.world.friendImageDeck[friendIndex];
-      //   }
-      // }
-
       newFriends.push(friendToAdd);
-    }
+    });
 
     this.scene.friendList = newFriends;
   }
