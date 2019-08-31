@@ -1,0 +1,8 @@
+<h1>Welcome to the Location Gallery!</h1>
+<ng-container *ngFor="let locationImage of locationImageList; let i = index">
+  <app-gallery-detailed-image
+  [detailedImage]="locationImage"
+  [index]="i"
+  [imageLibrary]="'locations'">
+  </app-gallery-detailed-image>
+</ng-container>
