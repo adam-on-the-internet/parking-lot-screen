@@ -6,8 +6,8 @@
   <button (click)="worldService.setupWorld()">Press Button To Start</button>
   <p>Tags:</p>
   <ul>
-    <li>
-      Tag
+    <li *ngFor="let tag of tagList">
+      {{tag}}
     </li>
   </ul>
 </ng-template>
