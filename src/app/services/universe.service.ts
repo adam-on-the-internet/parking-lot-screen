@@ -5,6 +5,7 @@ import { RandomHelper } from '../helpers/Random.helper';
 import { DomHelper } from '../helpers/Dom.helper';
 import { DetailedImage } from '../models/Image.model';
 import { LOCATION_IMAGES_DECK } from '../constants/location.constants';
+import { SceneLocation } from '../models/Location.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,8 @@ export class UniverseService {
   public currentFriends: Friend[] = [];
   public currentFriendImageDeck: DetailedImage[] = [];
 
-  public currentLocation;
-  public currentLocationDeck: string[] = [];
+  public currentLocation: SceneLocation;
+  public currentLocationDeck: DetailedImage[] = [];
 
   constructor() {
     setInterval(() => {
@@ -50,7 +51,9 @@ export class UniverseService {
 
   public pickBackground() {
     this.currentLocationDeck = RandomHelper.shuffle(LOCATION_IMAGES_DECK);
-    this.currentLocation = "assets/locations/" + this.currentLocationDeck[0];
-    DomHelper.setBackground(this.currentLocation);
+    this.currentLocation = {
+      image: this.currentLocationDeck[0],
+    };
+    DomHelper.setBackground("assets/locations/" + this.currentLocation.image.src);
   }
 }

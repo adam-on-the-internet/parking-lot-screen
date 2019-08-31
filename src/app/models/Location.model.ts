@@ -1,5 +1,5 @@
 import { DetailedImage } from './Image.model';
 
-export interface Location {
+export interface SceneLocation {
   image: DetailedImage;
 }
