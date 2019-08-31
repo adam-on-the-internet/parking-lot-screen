@@ -3,9 +3,9 @@ import { Friend } from '../models/Friend.model';
 import { FRIEND_IMAGE_LIST } from '../constants/friend.constants';
 import { RandomHelper } from '../helpers/Random.helper';
 import { DomHelper } from '../helpers/Dom.helper';
-import { DetailedImage } from '../models/Image.model';
 import { LOCATION_IMAGES_DECK } from '../constants/location.constants';
 import { Scene } from '../models/Scene.model';
+import { World } from '../models/World.model';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +25,11 @@ export class UniverseService {
     friendList: [],
   };
 
-  public worldFriendImageDeck: DetailedImage[] = [];
-  public worldLocationImageDeck: DetailedImage[] = [];
+  public world: World = {
+    name: "void world",
+    locationImageDeck: [],
+    friendImageDeck: [],
+  };
 
   constructor() {
     this.setupWorld();
@@ -57,15 +60,15 @@ export class UniverseService {
   }
 
   public setupOpenWorld(): void {
-    this.worldFriendImageDeck = RandomHelper.shuffle(FRIEND_IMAGE_LIST);
-    this.worldLocationImageDeck = RandomHelper.shuffle(LOCATION_IMAGES_DECK);
+    this.world.friendImageDeck = RandomHelper.shuffle(FRIEND_IMAGE_LIST);
+    this.world.locationImageDeck = RandomHelper.shuffle(LOCATION_IMAGES_DECK);
   }
 
   public pickFriends() {
     const newFriends: Friend[] = [];
     for (let i = 0; i < this.friendCount; i++) {
-      const friendIndex = RandomHelper.pickRandomNumber(0, this.worldFriendImageDeck.length);
-      const friendImage = this.worldFriendImageDeck[friendIndex];
+      const friendIndex = RandomHelper.pickRandomNumber(0, this.world.friendImageDeck.length);
+      const friendImage = this.world.friendImageDeck[friendIndex];
       const friendSpeed = RandomHelper.pickRandomNumber(1, this.availableSpeeds);
       const friendAnimation = RandomHelper.pickRandomNumber(1, this.availableAnimations);
       newFriends.push({
@@ -80,11 +83,11 @@ export class UniverseService {
 
   public pickLocation() {
     let nextLocationIndex = this.scene.location.index + 1;
-    if (nextLocationIndex === this.worldLocationImageDeck.length) {
+    if (nextLocationIndex === this.world.locationImageDeck.length) {
       nextLocationIndex = 0;
     }
     this.scene.location = {
-      image: this.worldLocationImageDeck[nextLocationIndex],
+      image: this.world.locationImageDeck[nextLocationIndex],
       index: nextLocationIndex,
     };
     DomHelper.setBackground("assets/locations/" + this.scene.location.image.src);
