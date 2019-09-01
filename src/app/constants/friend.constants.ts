@@ -376,4 +376,125 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
     name: "Shrugging Miles Edgeworth",
     tags: [],
   },
+  {
+    src: "friend75.gif",
+    name: "Floating Face",
+    tags: [],
+  },
+  {
+    src: "friend76.gif",
+    name: "Sneaky Skeleton Backwards",
+    tags: [],
+  },
+  {
+    src: "friend77.gif",
+    name: "Spinning Record",
+    tags: [],
+  },
+  {
+    src: "friend78.gif",
+    name: "Pixel Ghost",
+    tags: [],
+  },
+  {
+    src: "friend81.gif",
+    name: "sacrifice circle",
+    tags: [],
+  },
+  {
+    src: "friend82.gif",
+    name: "Doot Skeleton",
+    tags: [],
+  },
+  {
+    src: "friend83.gif",
+    name: "Trick or Treat Skeleton",
+    tags: [],
+  },
+  {
+    src: "friend84.gif",
+    name: "Being Nice is Cool",
+    tags: [],
+  },
+  {
+    src: "friend85.gif",
+    name: "Ike",
+    tags: [],
+  },
+  {
+    src: "friend86.gif",
+    name: "Oscar the Grouch",
+    tags: [],
+  },
+  {
+    src: "friend87.gif",
+    name: "Spooky Red Eyes",
+    tags: [],
+  },
+  {
+    src: "friend88.gif",
+    name: "Cheeseburger",
+    tags: [],
+  },
+  {
+    src: "friend89.gif",
+    name: "Flowers",
+    tags: [],
+  },
+  {
+    src: "friend91.gif",
+    name: "Ditto",
+    tags: [],
+  },
+  {
+    src: "friend92.gif",
+    name: "Sexy Walk",
+    tags: [],
+  },
+  {
+    src: "friend93.gif",
+    name: "Serving Tea",
+    tags: [],
+  },
+  {
+    src: "friend94.gif",
+    name: "Dat Boi",
+    tags: [],
+  },
+  {
+    src: "friend95.gif",
+    name: "Dat Skull",
+    tags: [],
+  },
+  {
+    src: "friend96.png",
+    name: "T Pose Mario Bros",
+    tags: [],
+  },
+  {
+    src: "friend97.png",
+    name: "t pose squidward",
+    tags: [],
+  },
+  {
+    src: "friend98.png",
+    name: "t pose sonic",
+    tags: [],
+  },
+  {
+    src: "friend99.gif",
+    name: "mumbo jumbo",
+    tags: [],
+  },
+  {
+    src: "friend100.gif",
+    name: "grunty",
+    tags: [],
+  },
+  {
+    src: "friend101.gif",
+    name: "banjo kazooie",
+    tags: [],
+  },
+
 ];
