@@ -4,92 +4,92 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
   {
     src: "1.jpg",
     name: "Paris Louvre",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "2.jpg",
     name: "Paris Notre Dam",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "3.jpg",
     name: "Paris Moulin Rogue",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "4.jpg",
     name: "Brooklyn Bridge",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "5.jpg",
     name: "Bristol Bridge",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "6.jpg",
     name: "London Eye",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "7.jpg",
     name: "Vatican City",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "8.jpg",
     name: "Maynooth Snow",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "9.jpg",
     name: "Bray and Greystones",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "10.jpg",
     name: "Andrew's Step Edinburgh",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "11.jpg",
     name: "Amsterdam Canals",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "12.jpg",
     name: "Howth",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "50.gif",
     name: "Paper Mario",
-    tags: [],
+    tags: ["video-game"],
   },
   {
     src: "51.gif",
     name: "City Trial Kirby",
-    tags: [],
+    tags: ["video-game"],
   },
   {
     src: "52.gif",
     name: "Mario Kart 64 Title Screen",
-    tags: [],
+    tags: ["video-game"],
   },
   {
     src: "53.gif",
     name: "Portal",
-    tags: [],
+    tags: ["video-game"],
   },
   {
     src: "54.jpg",
     name: "Pyramids",
-    tags: [],
+    tags: ["alien"],
   },
   {
     src: "55.gif",
     name: "Spooky House with Lightning",
-    tags: [],
+    tags: ["spooky"],
   },
   {
     src: "56.jpg",
@@ -99,22 +99,22 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
   {
     src: "57.JPG",
     name: "Arnold, MO",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "58.jpg",
     name: "Kirksville, MO",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "59.jpg",
     name: "Maynooth University",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "60.jpg",
     name: "Disclaimer 1",
-    tags: [],
+    tags: ["legal"],
   },
   {
     src: "61.gif",
@@ -124,32 +124,32 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
   {
     src: "87.gif",
     name: "Red Room",
-    tags: [],
+    tags: ["spooky"],
   },
   {
     src: "88.gif",
     name: "Banjo Spiral Mountain",
-    tags: [],
+    tags: ["video-game"],
   },
   {
     src: "89.gif",
     name: "Ocarina Temple of Time",
-    tags: [],
+    tags: ["video-game"],
   },
   {
     src: "90.gif",
     name: "Majora Moon Crashing",
-    tags: [],
+    tags: ["video-game"],
   },
   {
     src: "91.gif",
     name: "Majora Floating",
-    tags: [],
+    tags: ["video-game"],
   },
   {
     src: "92.jpg",
     name: "Moon Landing",
-    tags: [],
+    tags: ["alien"],
   },
   {
     src: "93.jpg",
@@ -159,7 +159,7 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
   {
     src: "94.gif",
     name: "Red Spooky House Full Moon",
-    tags: [],
+    tags: ["spooky"],
   },
   {
     src: "95.jpg",
@@ -169,62 +169,62 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
   {
     src: "96.gif",
     name: "Space Eclipse",
-    tags: [],
+    tags: ["alien"],
   },
   {
     src: "97.jpg",
     name: "Des Moines Bridge",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "98.jpg",
     name: "Peach's Castle",
-    tags: [],
+    tags: ["video-game"],
   },
   {
     src: "99.gif",
     name: "Xenoblade Chronicles Title Screen",
-    tags: [],
+    tags: ["video-game"],
   },
   {
     src: "100.jpg",
     name: "Space Black Hole",
-    tags: [],
+    tags: ["nintendo"],
   },
   {
     src: "101.jpg",
     name: "Final Desination",
-    tags: [],
+    tags: ["video-game"],
   },
   {
     src: "alien-meeting.jpg",
     name: "Alien Meeting",
-    tags: [],
+    tags: ["alien"],
   },
   {
     src: "best-show.jpg",
     name: "Full Band Aquadome Show",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "disclaimer2.jpg",
     name: "Disclaimer 2",
-    tags: [],
+    tags: ["legal"],
   },
   {
     src: "disclaimer3.png",
     name: "Disclaimer 3",
-    tags: [],
+    tags: ["legal"],
   },
   {
     src: "disclaimer4.jpg",
     name: "Disclaimer 4",
-    tags: [],
+    tags: ["legal"],
   },
   {
     src: "disclaimer5.jpg",
     name: "Disclaimer 5",
-    tags: [],
+    tags: ["legal"],
   },
   {
     src: "fire-house.jpg",
@@ -234,17 +234,17 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
   {
     src: "galaxyofstars.jpg",
     name: "Galaxy of Stars",
-    tags: [],
+    tags: ["alien"],
   },
   {
     src: "galaxy-wow.jpeg",
     name: "Purple Galaxy",
-    tags: [],
+    tags: ["alien"],
   },
   {
     src: "grave-cute.jpg",
     name: "Grave Photoshoot",
-    tags: [],
+    tags: ["spooky"],
   },
   {
     src: "guzmer.jpg",
@@ -254,12 +254,12 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
   {
     src: "heck-yes.jpeg",
     name: "Business Casual Cheering",
-    tags: [],
+    tags: ["legal"],
   },
   {
     src: "me.jpg",
     name: "Me at the Aquadome",
-    tags: [],
+    tags: ["travel"],
   },
   {
     src: "secure.jpg",
@@ -269,7 +269,7 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
   {
     src: "spooky-house.gif",
     name: "Spooky House 3d",
-    tags: [],
+    tags: ["spooky"],
   },
   {
     src: "storm.gif",
@@ -279,6 +279,6 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
   {
     src: "ufo.jpg",
     name: "UFO real???",
-    tags: [],
+    tags: ["alien"],
   },
 ];
