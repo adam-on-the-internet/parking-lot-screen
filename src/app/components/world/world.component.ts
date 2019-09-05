@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { WorldService } from 'src/app/services/world.service';
-import { UniverseService } from 'src/app/services/universe.service';
 
 @Component({
   selector: 'app-world',
@@ -12,12 +11,11 @@ export class WorldComponent {
     return this.worldService.ready;
   }
 
-  public get tagList(): string[] {
-    return this.universeService.availableTags;
+  public get worldName(): string {
+    return this.worldService.name;
   }
 
   constructor(
     public worldService: WorldService,
-    public universeService: UniverseService,
   ) { }
 }

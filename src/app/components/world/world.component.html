@@ -1,13 +1,13 @@
+<h1 *ngIf="worldName">
+  {{worldName}}
+</h1>
+<button *ngIf="worldService.songMode" (click)="worldService.nextSong()">
+  Next Song
+</button>
 <app-scene
   *ngIf="worldReady; else startMenu"
 ></app-scene>
 
 <ng-template #startMenu>
-  <button (click)="worldService.setupWorld()">Press Button To Start</button>
-  <p>Tags:</p>
-  <ul>
-    <li *ngFor="let tag of tagList">
-      {{tag}}
-    </li>
-  </ul>
+  <app-start-menu></app-start-menu>
 </ng-template>

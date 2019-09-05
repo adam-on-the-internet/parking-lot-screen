@@ -10,6 +10,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { FriendGalleryComponent } from './components/gallery/friend-gallery/friend-gallery.component';
 import { GalleryDetailedImageComponent } from './components/gallery/gallery-detailed-image/gallery-detailed-image.component';
 import { LocationGalleryComponent } from './components/gallery/location-gallery/location-gallery.component';
+import { StartMenuComponent } from './components/start-menu/start-menu.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LocationGalleryComponent } from './components/gallery/location-gallery/
     GalleryComponent,
     FriendGalleryComponent,
     GalleryDetailedImageComponent,
-    LocationGalleryComponent
+    LocationGalleryComponent,
+    StartMenuComponent
   ],
   imports: [
     BrowserModule
