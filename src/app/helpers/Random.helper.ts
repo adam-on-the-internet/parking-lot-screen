@@ -37,7 +37,7 @@ export abstract class RandomHelper {
       let randomNumber = this.pickRandomNumber(min, max);
 
       while (uniqueNumbers.includes(randomNumber)) {
-        if (randomNumber === max) {
+        if (randomNumber === (max -1 )) {
           randomNumber = min;
         } else {
           randomNumber++;

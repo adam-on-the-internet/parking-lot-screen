@@ -41,7 +41,6 @@ export class SceneService {
         friendList: this.friendService.generateFriends(),
         location: this.locationService.generateLocation(this.scene.location.index),
       };
-      console.log(JSON.stringify(this.scene));
       this.locationService.setupLocation(this.scene.location);
       this.describeScene();
     }
