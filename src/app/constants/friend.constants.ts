@@ -339,7 +339,7 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
   {
     src: "friend68.gif",
     name: "Swimming Corgi",
-    tags: ["swim"],
+    tags: ["swim", "dog"],
   },
   {
     src: "friend69.gif",
@@ -491,5 +491,39 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
     name: "banjo kazooie",
     tags: ["video-game"],
   },
-
+  {
+    src: "friend102.gif",
+    name: "cool dog",
+    tags: ["dog"],
+  },
+  {
+    src: "friend103.gif",
+    name: "puffy dog",
+    tags: ["dog"],
+  },
+  {
+    src: "friend104.gif",
+    name: "fan dog",
+    tags: ["dog"],
+  },
+  {
+    src: "friend105.gif",
+    name: "skate dog",
+    tags: ["dog"],
+  },
+  {
+    src: "friend106.gif",
+    name: "monocle scooby doo",
+    tags: ["dog"],
+  },
+  {
+    src: "friend107.gif",
+    name: "computer dog",
+    tags: ["dog"],
+  },
+  {
+    src: "friend108.gif",
+    name: "eyebrow dog",
+    tags: ["dog"],
+  },
 ];

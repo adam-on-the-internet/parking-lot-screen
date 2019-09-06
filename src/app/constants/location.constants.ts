@@ -281,4 +281,20 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
     name: "UFO real???",
     tags: ["alien"],
   },
+  {
+    src: "dogpark.jpg",
+    name: "dog park",
+    tags: ["dog"],
+  },
+  {
+    src: "nintendog.jpg",
+    name: "nintendog",
+    tags: ["dog"],
+  },
+  {
+    src: "scooby.jpg",
+    name: "scooby gang",
+    tags: ["dog"],
+  },
+
 ];
