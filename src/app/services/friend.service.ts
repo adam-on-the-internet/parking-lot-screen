@@ -33,7 +33,6 @@ export class FriendService {
         speed: RandomHelper.pickRandomNumber(1, this.universeService.availableSpeeds),
         animation: RandomHelper.pickRandomNumber(1, this.universeService.availableAnimations),
       };
-
       newFriends.push(friendToAdd);
     });
 

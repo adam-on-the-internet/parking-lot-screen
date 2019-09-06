@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WorldService } from 'src/app/services/world.service';
+import { SceneService } from 'src/app/services/scene.service';
 
 @Component({
   selector: 'app-world',
@@ -7,6 +8,7 @@ import { WorldService } from 'src/app/services/world.service';
   styleUrls: ['./world.component.css']
 })
 export class WorldComponent {
+  
   public get worldReady(): boolean {
     return this.worldService.ready;
   }
@@ -17,5 +19,11 @@ export class WorldComponent {
 
   constructor(
     public worldService: WorldService,
+    private sceneService: SceneService,
   ) { }
+
+  public nextSong(): void {
+    this.worldService.nextSong();
+    this.sceneService.switchScene();
+  }
 }

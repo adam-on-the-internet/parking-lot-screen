@@ -9,6 +9,7 @@ import { UniverseService } from './universe.service';
   providedIn: 'root'
 })
 export class SceneService {
+  private previousWorldName = "";
 
   public scene: Scene = {
     location: {
@@ -35,13 +36,22 @@ export class SceneService {
 
   public switchScene(): void {
     if (this.worldService.ready) {
+      this.detectWorldShift();
       this.scene = {
         friendList: this.friendService.generateFriends(),
         location: this.locationService.generateLocation(this.scene.location.index),
       };
+      console.log(JSON.stringify(this.scene));
       this.locationService.setupLocation(this.scene.location);
       this.describeScene();
     }
+  }
+
+  private detectWorldShift(): void {
+    if (this.worldService.name !== this.previousWorldName) {
+      this.scene.location.index = 0;
+    }
+    this.previousWorldName = this.worldService.name;
   }
 
   private describeScene(): void {

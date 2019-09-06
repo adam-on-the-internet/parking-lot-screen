@@ -16,7 +16,7 @@ export class WorldService {
   public friendImageDeck: DetailedImage[] = null;
 
   private PLAYLIST: Song[] = null;
-  private currentSong = null;
+  private currentSongNumber = null;
 
   public get ready(): boolean {
     return BooleanHelper.hasValue(this.name) &&
@@ -34,14 +34,14 @@ export class WorldService {
 
   public setupPlaylistMode(playlist: Song[]): void {
     this.PLAYLIST = playlist;
-    this.currentSong = 0;
+    this.currentSongNumber = 0;
     this.setupSongWorld();
   }
 
   public nextSong(): void {
-    this.currentSong++;
-    if (this.currentSong >= this.PLAYLIST.length) {
-      this.currentSong = 0;
+    this.currentSongNumber++;
+    if (this.currentSongNumber >= this.PLAYLIST.length) {
+      this.currentSongNumber = 0;
     };
     this.setupSongWorld();
   }
@@ -57,33 +57,35 @@ export class WorldService {
   }
 
   private setupSongWorld(): void {
-    const newSong = this.PLAYLIST[this.currentSong];
+    const newSong = this.PLAYLIST[this.currentSongNumber];
     this.name = newSong.name;
 
-    const matchingFriends = this.tagService.getFriendImagesFromTags(newSong.tags);
-    const matchingLocations = this.tagService.getLocationImagesFromTags(newSong.tags);
+    const songFriends = this.tagService.getFriendImagesFromTags(newSong.tags);
+    const songLocations = this.tagService.getLocationImagesFromTags(newSong.tags);
 
-    this.friendImageDeck = RandomHelper.shuffle(matchingFriends);
-    this.locationImageDeck = RandomHelper.shuffle(matchingLocations);
+    this.setupWorld(songFriends, songLocations);
     console.log(`Setting up ${this.name}...`);
   }
 
   private setupTagWorld(tag: string): void {
     this.name = tag;
     
-    const matchingFriends = this.tagService.getFriendImagesFromTags([tag]);
-    const matchingLocations = this.tagService.getLocationImagesFromTags([tag]);
+    const tagFriends = this.tagService.getFriendImagesFromTags([tag]);
+    const tagLocations = this.tagService.getLocationImagesFromTags([tag]);
 
-    this.friendImageDeck = RandomHelper.shuffle(matchingFriends);
-    this.locationImageDeck = RandomHelper.shuffle(matchingLocations);
+    this.setupWorld(tagFriends, tagLocations);
     console.log(`Setting up ${this.name}...`);
   }
 
 
   private setupOpenWorld(): void {
     this.name = "FREE MODE";
-    this.friendImageDeck = RandomHelper.shuffle(FRIEND_IMAGE_LIST);
-    this.locationImageDeck = RandomHelper.shuffle(LOCATION_IMAGES_DECK);
+    this.setupWorld(FRIEND_IMAGE_LIST, LOCATION_IMAGES_DECK);
     console.log(`Setting up ${this.name}...`);
+  }
+
+  private setupWorld(friends: DetailedImage[], locations: DetailedImage[]): void {
+    this.friendImageDeck = RandomHelper.shuffle(friends);
+    this.locationImageDeck = RandomHelper.shuffle(locations);
   }
 }
