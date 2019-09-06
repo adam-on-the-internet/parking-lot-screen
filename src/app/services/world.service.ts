@@ -51,6 +51,11 @@ export class WorldService {
     this.setupOpenWorld();
   }
 
+  public setupTagMode(tag: string): void {
+    this.PLAYLIST = null;
+    this.setupTagWorld(tag);
+  }
+
   private setupSongWorld(): void {
     const newSong = this.PLAYLIST[this.currentSong];
     this.name = newSong.name;

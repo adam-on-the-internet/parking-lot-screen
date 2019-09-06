@@ -32,4 +32,8 @@ export class StartMenuComponent {
     ]);
   }
 
+  public startTagMode(tag: string): void {
+    this.worldService.setupTagMode(tag);
+  }
+
 }
