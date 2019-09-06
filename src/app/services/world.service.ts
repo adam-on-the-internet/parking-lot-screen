@@ -5,6 +5,7 @@ import { LOCATION_IMAGES_DECK } from '../constants/location.constants';
 import { DetailedImage } from '../models/Image.model';
 import { BooleanHelper } from '../helpers/Boolean.helper';
 import { Song } from '../models/Song.model';
+import { TagService } from './tag.service';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class WorldService {
   public get songMode(): boolean {
     return BooleanHelper.hasValue(this.PLAYLIST);
   }
+
+  constructor(
+    public tagService: TagService,
+  ) {}
 
   public setupPlaylistMode(playlist: Song[]): void {
     this.PLAYLIST = playlist;
@@ -49,17 +54,23 @@ export class WorldService {
   private setupSongWorld(): void {
     const newSong = this.PLAYLIST[this.currentSong];
     this.name = newSong.name;
-    // TODO parse by tag
-    this.friendImageDeck = RandomHelper.shuffle(FRIEND_IMAGE_LIST);
-    this.locationImageDeck = RandomHelper.shuffle(LOCATION_IMAGES_DECK);
+
+    const matchingFriends = this.tagService.getFriendImagesFromTags(newSong.tags);
+    const matchingLocations = this.tagService.getLocationImagesFromTags(newSong.tags);
+
+    this.friendImageDeck = RandomHelper.shuffle(matchingFriends);
+    this.locationImageDeck = RandomHelper.shuffle(matchingLocations);
     console.log(`Setting up ${this.name}...`);
   }
 
   private setupTagWorld(tag: string): void {
     this.name = tag;
-    // TODO parse by tag
-    this.friendImageDeck = RandomHelper.shuffle(FRIEND_IMAGE_LIST);
-    this.locationImageDeck = RandomHelper.shuffle(LOCATION_IMAGES_DECK);
+    
+    const matchingFriends = this.tagService.getFriendImagesFromTags([tag]);
+    const matchingLocations = this.tagService.getLocationImagesFromTags([tag]);
+
+    this.friendImageDeck = RandomHelper.shuffle(matchingFriends);
+    this.locationImageDeck = RandomHelper.shuffle(matchingLocations);
     console.log(`Setting up ${this.name}...`);
   }
 
