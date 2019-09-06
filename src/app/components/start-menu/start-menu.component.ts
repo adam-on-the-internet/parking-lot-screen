@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UniverseService } from 'src/app/services/universe.service';
 import { WorldService } from 'src/app/services/world.service';
 import { LOVER, HAUNT, DISCLAIMER, AUNT } from 'src/app/constants/song.constants';
+import { TagService } from 'src/app/services/tag.service';
 
 @Component({
   selector: 'app-start-menu',
@@ -11,12 +12,13 @@ import { LOVER, HAUNT, DISCLAIMER, AUNT } from 'src/app/constants/song.constants
 export class StartMenuComponent {
 
   public get tagList(): string[] {
-    return this.universeService.availableTags;
+    return this.tagService.availableTags;
   }
 
   constructor(
     public worldService: WorldService,
     public universeService: UniverseService,
+    private tagService: TagService,
   ) { }
 
   public startFreeMode(): void {
