@@ -1,4 +1,7 @@
-<div class="popup" (click)="pop()">Click for Details
+<div class="popup" (click)="pop()">
+  <app-button [minor]="true">
+    {{buttonText}}
+  </app-button>
     <span class="popuptext" [id]="popUpId">
       <ng-content></ng-content>
     </span>

@@ -1,3 +1,7 @@
-<button class="button button-blue" (click)="onClick()">
+<button 
+  class="button" 
+  [class.button-major]="!minor"
+  [class.button-minor]="minor"
+  (click)="onClick()">
   <ng-content></ng-content>
 </button>

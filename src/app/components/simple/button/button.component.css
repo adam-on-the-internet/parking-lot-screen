@@ -6,7 +6,6 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    width: 400px;
     font-size: 16px;
     margin: 4px 2px;
     -webkit-transition-duration: 0.4s; /* Safari */
@@ -14,13 +13,23 @@
     cursor: pointer;
   }
   
-  .button-blue {
+  .button-major {
     background-color: white; 
+    width: 350px;
     color: black; 
     border: 2px solid #008CBA;
   }
   
-  .button-blue:hover {
+  .button-major:hover {
     background-color: #008CBA;
     color: white;
   }
+
+  .button-minor {
+    background-color: white;
+    width: 150px;
+    color: black;
+    border: 2px solid #e7e7e7;
+  }
+  
+  .button-minor:hover {background-color: #e7e7e7;}

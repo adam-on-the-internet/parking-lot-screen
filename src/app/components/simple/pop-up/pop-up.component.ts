@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class PopUpComponent {
   @Input() public popUpId = "pop-up";
+  @Input() public buttonText = "Details";
 
   public pop(): void {
     const popup = document.getElementById(this.popUpId);
