@@ -1,4 +1,4 @@
-<h1 id="world-name" *ngIf="worldName" (click)="nextSong()">
+<h1 id="world-name" *ngIf="worldService.songMode" (click)="nextSong()">
   {{worldName}}
 </h1>
 <app-scene
