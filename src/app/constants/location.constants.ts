@@ -307,11 +307,6 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
     tags: ["cooking"],
   },
   {
-    src: "kitchen3.jpg",
-    name: "cardiff 1",
-    tags: ["cooking"],
-  },
-  {
     src: "kitchen4.jpg",
     name: "cardiff 2",
     tags: ["cooking"],

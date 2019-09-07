@@ -527,38 +527,13 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
     tags: ["dog"],
   },
   {
-    src: "friend109.jpg",
-    name: "pasta clump",
-    tags: ["cooking"],
-  },
-  {
-    src: "friend110.jpg",
-    name: "some pasta",
-    tags: ["cooking"],
-  },
-  {
     src: "friend111.png",
     name: "finished pasta",
     tags: ["cooking"],
   },
   {
-    src: "friend112.jpg",
-    name: "meatball pasta",
-    tags: ["cooking"],
-  },
-  {
-    src: "friend113.jpg",
-    name: "bowtie pasta",
-    tags: ["cooking"],
-  },
-  {
     src: "friend114.gif",
     name: "pasta person",
-    tags: ["cooking"],
-  },
-  {
-    src: "friend115.jpg",
-    name: "lasagna",
     tags: ["cooking"],
   },
   {
