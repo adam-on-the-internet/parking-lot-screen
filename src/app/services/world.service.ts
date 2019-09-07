@@ -4,8 +4,8 @@ import { FRIEND_IMAGE_LIST } from '../constants/friend.constants';
 import { LOCATION_IMAGES_DECK } from '../constants/location.constants';
 import { DetailedImage } from '../models/Image.model';
 import { BooleanHelper } from '../helpers/Boolean.helper';
-import { Song } from '../models/Song.model';
 import { TagService } from './tag.service';
+import { Playlist } from '../models/Playlist.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class WorldService {
   public locationImageDeck: DetailedImage[] = null;
   public friendImageDeck: DetailedImage[] = null;
 
-  private PLAYLIST: Song[] = null;
+  private runningPlaylist: Playlist = null;
   private currentSongNumber = null;
 
   public get ready(): boolean {
@@ -25,39 +25,39 @@ export class WorldService {
   }
 
   public get songMode(): boolean {
-    return BooleanHelper.hasValue(this.PLAYLIST);
+    return BooleanHelper.hasValue(this.runningPlaylist);
   }
 
   constructor(
     public tagService: TagService,
   ) {}
 
-  public setupPlaylistMode(playlist: Song[]): void {
-    this.PLAYLIST = playlist;
+  public setupPlaylistMode(playlist: Playlist): void {
+    this.runningPlaylist = playlist;
     this.currentSongNumber = 0;
     this.setupSongWorld();
   }
 
   public nextSong(): void {
     this.currentSongNumber++;
-    if (this.currentSongNumber >= this.PLAYLIST.length) {
+    if (this.currentSongNumber >= this.runningPlaylist.songs.length) {
       this.currentSongNumber = 0;
     };
     this.setupSongWorld();
   }
 
   public setupFreeMode(): void {
-    this.PLAYLIST = null;
+    this.runningPlaylist = null;
     this.setupOpenWorld();
   }
 
   public setupTagMode(tag: string): void {
-    this.PLAYLIST = null;
+    this.runningPlaylist = null;
     this.setupTagWorld(tag);
   }
 
   private setupSongWorld(): void {
-    const newSong = this.PLAYLIST[this.currentSongNumber];
+    const newSong = this.runningPlaylist.songs[this.currentSongNumber];
     this.name = newSong.name;
 
     const songFriends = this.tagService.getFriendImagesFromTags(newSong.tags);

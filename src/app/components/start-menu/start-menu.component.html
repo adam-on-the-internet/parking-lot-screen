@@ -1,7 +1,15 @@
+<p>Show any images.</p>
 <app-button (click)="startFreeMode()">Start Free Mode</app-button>
-<app-button (click)="startPlaylistMode()">Start Playlist Mode</app-button>
 <hr>
-<p>Select images by tag:</p>
+<p>Show images that match each song.</p>
+<ng-container *ngFor="let playlist of availablePlaylists">
+  <app-button (click)="startPlaylistMode(playlist)">
+    Start {{playlist.name}} Playlist
+  </app-button>
+  <br>
+</ng-container>
+<hr>
+<p>Show images that match a given tag.</p>
 <ng-container *ngFor="let tag of tagList">
   <app-button (click)="startTagMode(tag)">
     Start {{tag}} Mode
