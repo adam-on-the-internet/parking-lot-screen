@@ -526,4 +526,94 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
     name: "eyebrow dog",
     tags: ["dog"],
   },
+  {
+    src: "friend109.jpg",
+    name: "pasta clump",
+    tags: ["cooking"],
+  },
+  {
+    src: "friend110.jpg",
+    name: "some pasta",
+    tags: ["cooking"],
+  },
+  {
+    src: "friend111.png",
+    name: "finished pasta",
+    tags: ["cooking"],
+  },
+  {
+    src: "friend112.jpg",
+    name: "meatball pasta",
+    tags: ["cooking"],
+  },
+  {
+    src: "friend113.jpg",
+    name: "bowtie pasta",
+    tags: ["cooking"],
+  },
+  {
+    src: "friend114.gif",
+    name: "pasta person",
+    tags: ["cooking"],
+  },
+  {
+    src: "friend115.jpg",
+    name: "lasagna",
+    tags: ["cooking"],
+  },
+  {
+    src: "friend116.gif",
+    name: "cooking mama",
+    tags: ["cooking", "nintendo"],
+  },
+  {
+    src: "friend117.gif",
+    name: "bake sale",
+    tags: ["cooking"],
+  },
+  {
+    src: "friend118.gif",
+    name: "cooking human",
+    tags: ["cooking"],
+  },
+  {
+    src: "friend119.gif",
+    name: "cooking skeleton",
+    tags: ["cooking", "spooky"],
+  },
+  {
+    src: "friend120.gif",
+    name: "cooking revenge",
+    tags: ["cooking"],
+  },
+  {
+    src: "friend121.gif",
+    name: "cooking :)",
+    tags: ["cooking"],
+  },
+  {
+    src: "friend122.gif",
+    name: "cooking with satan",
+    tags: ["cooking"],
+  },
+  {
+    src: "friend123.gif",
+    name: "cooking mario",
+    tags: ["cooking", "nintendo"],
+  },
+  {
+    src: "friend124.gif",
+    name: "robot hand",
+    tags: ["robot"],
+  },
+  {
+    src: "friend125.gif",
+    name: "robot piano",
+    tags: ["robot"],
+  },
+  {
+    src: "friend126.gif",
+    name: "robot walking",
+    tags: ["robot"],
+  },
 ];

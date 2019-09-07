@@ -296,5 +296,24 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
     name: "scooby gang",
     tags: ["dog"],
   },
-
+  {
+    src: "kitchen1.gif",
+    name: "kitchen 1",
+    tags: ["cooking"],
+  },
+  {
+    src: "kitchen2.jpg",
+    name: "kitchen 2",
+    tags: ["cooking"],
+  },
+  {
+    src: "kitchen3.jpg",
+    name: "cardiff 1",
+    tags: ["cooking"],
+  },
+  {
+    src: "kitchen4.jpg",
+    name: "cardiff 2",
+    tags: ["cooking"],
+  },
 ];
