@@ -1,7 +1,10 @@
-<app-button (click)="startFreeMode()">Press Button To Start FREE MODE</app-button>
-<app-button (click)="startPlaylistMode()">Press Button To Start PLAYLIST MODE</app-button>
-
-<p>Tags:</p>
-<app-button (click)="startTagMode(tag)" *ngFor="let tag of tagList">
-  {{tag}} Mode
-</app-button>
+<app-button (click)="startFreeMode()">Start Free Mode</app-button>
+<app-button (click)="startPlaylistMode()">Start Playlist Mode</app-button>
+<hr>
+<p>Select images by tag:</p>
+<ng-container *ngFor="let tag of tagList">
+  <app-button (click)="startTagMode(tag)">
+    Start {{tag}} Mode
+  </app-button>
+  <br>
+</ng-container>
