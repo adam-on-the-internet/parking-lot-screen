@@ -1,4 +1,6 @@
 <h1>Welcome to the Location Gallery!</h1>
+<p>There are {{locationImageList.length}} locations in the gallery.</p>
+<hr>
 <ng-container *ngFor="let locationImage of locationImageList; let i = index">
   <app-gallery-detailed-image
   [detailedImage]="locationImage"

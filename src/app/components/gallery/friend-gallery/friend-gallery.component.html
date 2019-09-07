@@ -1,4 +1,6 @@
 <h1>Welcome to the Friend Gallery!</h1>
+<p>There are {{friendImageList.length}} friends in the gallery.</p>
+<hr>
 <ng-container *ngFor="let friendImage of friendImageList; let i = index">
   <app-gallery-detailed-image
   [detailedImage]="friendImage"
