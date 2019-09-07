@@ -1,9 +1,10 @@
-<button (click)="setMode('SHOW')" *ngIf="!showMode">
+<app-button (click)="setMode('SHOW')" *ngIf="!showMode"> 
   Show Mode
-</button>
-<button (click)="setMode('GALLERY')" *ngIf="modeNotSet">
+</app-button>
+
+<app-button (click)="setMode('GALLERY')" *ngIf="modeNotSet"> 
   Gallery Mode
-</button>
+</app-button>
 
 <app-world *ngIf="showMode"></app-world>
 <app-gallery *ngIf="galleryMode"></app-gallery>

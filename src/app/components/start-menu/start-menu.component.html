@@ -1,7 +1,7 @@
-<button (click)="startFreeMode()">Press Button To Start FREE MODE</button>
-<button (click)="startPlaylistMode()">Press Button To Start PLAYLIST MODE</button>
+<app-button (click)="startFreeMode()">Press Button To Start FREE MODE</app-button>
+<app-button (click)="startPlaylistMode()">Press Button To Start PLAYLIST MODE</app-button>
 
 <p>Tags:</p>
-<button (click)="startTagMode(tag)" *ngFor="let tag of tagList">
+<app-button (click)="startTagMode(tag)" *ngFor="let tag of tagList">
   {{tag}} Mode
-</button>
+</app-button>

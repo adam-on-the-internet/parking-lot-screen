@@ -1,9 +1,9 @@
 <h1 *ngIf="worldName">
   {{worldName}}
 </h1>
-<button *ngIf="worldService.songMode" (click)="nextSong()">
+<app-button *ngIf="worldService.songMode" (click)="nextSong()">
   Next Song
-</button>
+</app-button>
 <app-scene
   *ngIf="worldReady; else startMenu"
 ></app-scene>
