@@ -3,6 +3,12 @@
   <app-button (click)="startPlaylistMode(playlist)">
     Start {{playlist.name}} Playlist
   </app-button>
+  <app-pop-up [popUpId]="playlist.name">
+    <p>Playlist: {{playlist.name}}</p>
+    <ol>
+      <li *ngFor="let song of playlist.songs">{{song.name}}</li>
+    </ol>
+  </app-pop-up>
   <br>
 </ng-container>
 <hr>

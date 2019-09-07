@@ -12,6 +12,7 @@ import { GalleryDetailedImageComponent } from './components/gallery/gallery-deta
 import { LocationGalleryComponent } from './components/gallery/location-gallery/location-gallery.component';
 import { StartMenuComponent } from './components/start-menu/start-menu.component';
 import { ButtonComponent } from './components/simple/button/button.component';
+import { PopUpComponent } from './components/simple/pop-up/pop-up.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ButtonComponent } from './components/simple/button/button.component';
     GalleryDetailedImageComponent,
     LocationGalleryComponent,
     StartMenuComponent,
-    ButtonComponent
+    ButtonComponent,
+    PopUpComponent
   ],
   imports: [
     BrowserModule
