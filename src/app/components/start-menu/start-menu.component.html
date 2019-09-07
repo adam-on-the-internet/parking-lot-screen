@@ -1,24 +1,34 @@
-<p>Show images that match each song.</p>
-<ng-container *ngFor="let playlist of availablePlaylists">
-  <app-button (click)="startPlaylistMode(playlist)">
-    Start {{playlist.name}} Playlist
-  </app-button>
-  <app-pop-up [popUpId]="playlist.name" [buttonText]="'Songs'">
-    <p>Playlist: {{playlist.name}}</p>
-    <ol>
-      <li *ngFor="let song of playlist.songs">{{song.name}}</li>
-    </ol>
-  </app-pop-up>
-  <br>
-</ng-container>
+<section id="playlist-mode">
+    <h2>Playlist Mode</h2>
+    <p>Show images that match each song.</p>
+    <ng-container *ngFor="let playlist of availablePlaylists">
+      <app-button (click)="startPlaylistMode(playlist)">
+        Start {{playlist.name}} Playlist
+      </app-button>
+      <app-pop-up [popUpId]="playlist.name" [buttonText]="'Songs'">
+        <p>Playlist: {{playlist.name}}</p>
+        <ol>
+          <li *ngFor="let song of playlist.songs">{{song.name}}</li>
+        </ol>
+      </app-pop-up>
+      <br>
+    </ng-container>
+</section>
 <hr>
-<p>Show any images.</p>
-<app-button (click)="startFreeMode()">Start Free Mode</app-button>
+<section id="free-mode">
+    <h2>Free Mode</h2>
+    <p>Show any images.</p>
+    <app-button (click)="startFreeMode()">Start Free Mode</app-button>
+</section>
 <hr>
-<p>Show images that match a given tag.</p>
-<ng-container *ngFor="let tag of tagList">
-  <app-button (click)="startTagMode(tag)">
-    Start {{tag}} Mode
-  </app-button>
-  <br>
-</ng-container>
+<section id="tag-mode">
+    <h2>Tag Mode</h2>
+    <p>Show images that match a given tag.</p>
+    <ng-container *ngFor="let tag of tagList">
+      <app-button (click)="startTagMode(tag)">
+        Start {{tag}} Mode
+      </app-button>
+      <br>
+    </ng-container>
+</section>
+<hr>
