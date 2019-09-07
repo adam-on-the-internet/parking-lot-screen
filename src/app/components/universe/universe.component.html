@@ -1,9 +1,16 @@
-<app-button (click)="setMode('SHOW')" *ngIf="!showMode"> 
-  Show Mode
-</app-button>
-
+<section id="welcome-header" *ngIf="modeNotSet">
+    <h1>Welcome</h1>
+    <p>
+      Would you like to start a show or view the gallery of images?
+    </p>
+</section>
+<p>
+    <app-button (click)="setMode('SHOW')" *ngIf="!showMode"> 
+        Start Show
+      </app-button>
+</p>
 <app-button (click)="setMode('GALLERY')" *ngIf="modeNotSet"> 
-  Gallery Mode
+  View Gallery
 </app-button>
 
 <app-world *ngIf="showMode"></app-world>
