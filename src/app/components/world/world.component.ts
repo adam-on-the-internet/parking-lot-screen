@@ -23,7 +23,9 @@ export class WorldComponent {
   ) { }
 
   public nextSong(): void {
-    this.worldService.nextSong();
-    this.sceneService.switchScene();
+    if (this.worldService.songMode) {
+      this.worldService.nextSong();
+      this.sceneService.switchScene();
+    }
   }
 }
