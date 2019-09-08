@@ -272,11 +272,6 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
     tags: ["spooky"],
   },
   {
-    src: "storm.gif",
-    name: "Big Worm Coming",
-    tags: [],
-  },
-  {
     src: "ufo.jpg",
     name: "UFO real???",
     tags: ["alien"],
@@ -327,6 +322,26 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
     src: "z3.jpg",
     name: "beverly hills chihuahua",
     tags: ["dog"],
+  },
+  {
+    src: "z2.jpg",
+    name: "pasta house",
+    tags: ["cooking"],
+  },
+  {
+    src: "z5.jpg",
+    name: "cardiff tourism",
+    tags: ["cardiff"],
+  },
+  {
+    src: "z6.jpg",
+    name: "overcooked",
+    tags: ["cooking", "video-game"],
+  },
+  {
+    src: "z7.jpg",
+    name: "ratatouille",
+    tags: ["cooking"],
   },
 
 ];

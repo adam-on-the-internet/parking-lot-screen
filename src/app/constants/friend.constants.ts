@@ -616,5 +616,14 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
     name: "chihuahua",
     tags: ["dog"],
   },
-
+  {
+    src: "friend132.png",
+    name: "pasta house",
+    tags: ["cooking"],
+  },
+  {
+    src: "friend133.gif",
+    name: "garfield lasagna",
+    tags: ["cooking", "cartoon"],
+  },
 ];
