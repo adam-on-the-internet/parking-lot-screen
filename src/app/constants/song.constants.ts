@@ -59,3 +59,18 @@ export const CARDIFF: Song = {
     name: "pasta in cardiff",
     tags: ["cooking", "cardiff"],
 }
+
+export const ALL_SONGS: Song[] = [
+    DISCLAIMER,
+    EYES,
+    LOVER,
+    FEELS,
+    VAGUE,
+    AUNT,
+    SHIRT,
+    DOG,
+    HAUNT,
+    THEME,
+    CARDIFF,
+    JOHNNY,
+];
