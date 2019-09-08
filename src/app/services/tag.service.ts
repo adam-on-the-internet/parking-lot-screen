@@ -38,6 +38,10 @@ export class TagService {
     return this.findUniqueTagsFromDetailedImageList(LOCATION_IMAGES_DECK);
   }
 
+  public get uniqueFriendTags(): string [] {
+    return this.findUniqueTagsFromDetailedImageList(FRIEND_IMAGE_LIST);
+  }
+
   private get allFriendTags(): string[] {
     return this.findAllTagsFromDetailedImageList(FRIEND_IMAGE_LIST);
   }
