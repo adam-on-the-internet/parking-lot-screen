@@ -19,7 +19,7 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
   {
     src: "friend4.png",
     name: "Xenomorph",
-    tags: ["space"],
+    tags: ["alien"],
   },
   {
     src: "friend5.png",
