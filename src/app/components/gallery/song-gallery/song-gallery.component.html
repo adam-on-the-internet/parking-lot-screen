@@ -6,5 +6,12 @@ Songs:
 <p *ngIf="songView">{{songView.name}}</p>
 <hr>
 <ng-container *ngIf="songView">
-  {{songView | json}}
+  <h3>Song Tags:</h3>
+  <ul>
+    <li *ngFor="let tag of songView.tags">{{tag}}</li>
+  </ul>
+  <hr>
+  <h3>Song Locations:</h3>
+  <hr>
+  <h3>Song Friends:</h3>
 </ng-container>
