@@ -1,7 +1,12 @@
 <h1>Welcome to the Location Gallery!</h1>
-<p>There are {{locationImageList.length}} locations in the gallery.</p>
+<p>There are {{locationCount}} locations in the gallery.</p>
 <hr>
-<ng-container *ngFor="let locationImage of locationImageList; let i = index">
+<p>Filters:</p>
+<button (click)="setFilter('')">No Filter</button>
+<button (click)="setFilter(tag)" *ngFor="let tag of tags">{{tag}}</button>
+<p *ngIf="filterTag !== ''">Filtering by tag: {{filterTag}}</p>
+<hr>
+<ng-container *ngFor="let locationImage of locationsToDisplay; let i = index">
   <app-gallery-detailed-image
   [detailedImage]="locationImage"
   [index]="i"

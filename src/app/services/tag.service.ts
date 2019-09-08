@@ -34,7 +34,7 @@ export class TagService {
     return _availableTags;
   }
 
-  private get uniqueLocationTags(): string[] {
+  public get uniqueLocationTags(): string[] {
     return this.findUniqueTagsFromDetailedImageList(LOCATION_IMAGES_DECK);
   }
 

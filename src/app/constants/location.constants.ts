@@ -189,7 +189,7 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
   {
     src: "100.jpg",
     name: "Space Black Hole",
-    tags: ["nintendo"],
+    tags: ["alien"],
   },
   {
     src: "101.jpg",
