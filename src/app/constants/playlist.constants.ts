@@ -1,4 +1,4 @@
-import { LOVER, HAUNT, DISCLAIMER, AUNT, VAGUE, DOG, EYES, FEELS } from './song.constants';
+import { LOVER, HAUNT, DISCLAIMER, AUNT, VAGUE, DOG, EYES, FEELS, CARDIFF } from './song.constants';
 import { Playlist } from '../models/Playlist.model';
 
 const TEST_PLAYLIST: Playlist = {
@@ -8,6 +8,7 @@ const TEST_PLAYLIST: Playlist = {
         HAUNT,
         DISCLAIMER,
         AUNT,
+        CARDIFF,
     ]
 };
 

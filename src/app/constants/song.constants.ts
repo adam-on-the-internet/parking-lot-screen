@@ -54,3 +54,8 @@ export const THEME: Song = {
     name: "now you're in the parking lot",
     tags: [],
 };
+
+export const CARDIFF: Song = {
+    name: "pasta in cardiff",
+    tags: ["cooking", "cardiff"],
+}
