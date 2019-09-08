@@ -219,7 +219,7 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
   {
     src: "friend44.gif",
     name: "Screaming Courage",
-    tags: ["cartoon", "spooky"],
+    tags: ["cartoon", "spooky", "dog"],
   },
   {
     src: "friend45.gif",
@@ -591,4 +591,30 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
     name: "robot walking",
     tags: ["robot"],
   },
+  {
+    src: "friend127.gif",
+    name: "dog licking",
+    tags: ["dog"],
+  },
+  {
+    src: "friend128.gif",
+    name: "lady and the tramp",
+    tags: ["dog", "cooking"],
+  },
+  {
+    src: "friend129.gif",
+    name: "dog on phone",
+    tags: ["dog"],
+  },
+  {
+    src: "friend130.gif",
+    name: "3d dog",
+    tags: ["dog", "bad"],
+  },
+  {
+    src: "friend131.png",
+    name: "chihuahua",
+    tags: ["dog"],
+  },
+
 ];

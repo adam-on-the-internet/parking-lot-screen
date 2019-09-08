@@ -42,7 +42,7 @@ export const HAUNT: Song = {
 
 export const DOG: Song = {
     name: "about your dog",
-    tags: [],
+    tags: ["dog"],
 };
 
 export const JOHNNY: Song = {

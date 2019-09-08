@@ -311,4 +311,22 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
     name: "cardiff 2",
     tags: ["cardiff"],
   },
+  {
+    src: "z0.jpg",
+    name: "courage the cowardly dog",
+    tags: ["dog", "cartoon"],
+  },
+
+  {
+    src: "z1.jpg",
+    name: "dog friends",
+    tags: ["dog"],
+  },
+
+  {
+    src: "z3.jpg",
+    name: "beverly hills chihuahua",
+    tags: ["dog"],
+  },
+
 ];
