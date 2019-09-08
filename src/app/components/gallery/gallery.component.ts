@@ -9,7 +9,7 @@ export class GalleryComponent {
   public mode = "";
 
   public get modeNotSet(): boolean {
-    return !this.friendMode && !this.locationMode;
+    return !this.friendMode && !this.locationMode && !this.songMode;
   }
 
   public get friendMode(): boolean {
@@ -18,6 +18,10 @@ export class GalleryComponent {
 
   public get locationMode(): boolean {
     return this.mode === "LOCATION";
+  }
+
+  public get songMode(): boolean {
+    return this.mode === "SONG";
   }
 
   public setMode(mode: string): void {

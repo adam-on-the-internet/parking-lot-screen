@@ -1,0 +1,10 @@
+<h1>Welcome to the Song Gallery!</h1>
+<p>There are {{songCount}} songs in the gallery.</p>
+<hr>
+<ng-container *ngFor="let song of songsToDisplay; let i = index">
+  <!-- <app-gallery-detailed-image
+  [detailedImage]="locationImage"
+  [index]="i"
+  [imageLibrary]="'locations'">
+  </app-gallery-detailed-image> -->
+</ng-container>

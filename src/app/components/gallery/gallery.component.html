@@ -6,6 +6,10 @@
   Location Gallery
 </app-button>
 
+<app-button [minor]="true" (click)="setMode('SONG')">
+  Song Gallery
+</app-button>
+
 <section id="gallery-welcome" *ngIf="modeNotSet">
     <h1>Welcome to the Gallery!</h1>
     <p>
@@ -16,3 +20,4 @@
 
 <app-friend-gallery *ngIf="friendMode"></app-friend-gallery>
 <app-location-gallery *ngIf="locationMode"></app-location-gallery>
+<app-song-gallery *ngIf="songMode"></app-song-gallery>

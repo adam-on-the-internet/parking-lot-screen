@@ -13,6 +13,7 @@ import { LocationGalleryComponent } from './components/gallery/location-gallery/
 import { StartMenuComponent } from './components/start-menu/start-menu.component';
 import { ButtonComponent } from './components/simple/button/button.component';
 import { PopUpComponent } from './components/simple/pop-up/pop-up.component';
+import { SongGalleryComponent } from './components/gallery/song-gallery/song-gallery.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PopUpComponent } from './components/simple/pop-up/pop-up.component';
     LocationGalleryComponent,
     StartMenuComponent,
     ButtonComponent,
-    PopUpComponent
+    PopUpComponent,
+    SongGalleryComponent
   ],
   imports: [
     BrowserModule
