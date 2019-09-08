@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Song } from 'src/app/models/Song.model';
-import { HAUNT, AUNT, LOVER, CARDIFF, ALL_SONGS } from 'src/app/constants/song.constants';
+import { ALL_SONGS } from 'src/app/constants/song.constants';
+import { DetailedImage } from 'src/app/models/Image.model';
+import { TagService } from 'src/app/services/tag.service';
 
 @Component({
   selector: 'app-song-gallery',
   templateUrl: './song-gallery.component.html',
   styleUrls: ['./song-gallery.component.css']
 })
-export class SongGalleryComponent implements OnInit {
+export class SongGalleryComponent {
   public songView: Song = null;
 
   public get songsToDisplay(): Song[] {
@@ -18,13 +20,26 @@ export class SongGalleryComponent implements OnInit {
     return ALL_SONGS.length;
   }
 
-  public setSong(song: Song): void {
-    this.songView = song;
+  public get songLocations(): DetailedImage[] {
+    if (!this.songView) {
+      return [];
+    }
+    return this.tagService.getLocationImagesFromTags(this.songView.tags);
   }
 
-  constructor() { }
+  public get songFriends(): DetailedImage[] {
+    if (!this.songView) {
+      return [];
+    }
+    return this.tagService.getFriendImagesFromTags(this.songView.tags);
+  }
 
-  ngOnInit() {
+  constructor(
+    private tagService: TagService,
+  ) { }
+
+  public setSong(song: Song): void {
+    this.songView = song;
   }
 
 }
