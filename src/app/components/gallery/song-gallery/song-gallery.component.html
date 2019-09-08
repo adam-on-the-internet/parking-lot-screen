@@ -9,6 +9,9 @@
 <hr>
 <ng-container *ngIf="songView">
   <h3>Song Tags:</h3>
+  <p *ngIf="songView.tags.length === 0">
+    No tags for this song.
+  </p>
   <ul>
     <li *ngFor="let tag of songView.tags">{{tag}}</li>
   </ul>
