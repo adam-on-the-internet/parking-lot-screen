@@ -736,5 +736,49 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
     name: "alien eyes",
     tags: ["eyes", "alien"],
   },
-
+  {
+    src: "friend156.gif",
+    name: "shirt 1",
+    tags: ["shirt"],
+  },
+  {
+    src: "friend157.gif",
+    name: "shirt 2",
+    tags: ["shirt"],
+  },
+  {
+    src: "friend158.gif",
+    name: "removing shirt",
+    tags: ["shirt"],
+  },
+  {
+    src: "friend159.gif",
+    name: "shirt 3",
+    tags: ["shirt"],
+  },
+  {
+    src: "friend160.gif",
+    name: "shirt 4",
+    tags: ["shirt"],
+  },
+  {
+    src: "friend161.gif",
+    name: "shirt 5",
+    tags: ["shirt"],
+  },
+  {
+    src: "friend162.gif",
+    name: "shirts on the line",
+    tags: ["shirt"],
+  },
+  {
+    src: "friend163.gif",
+    name: "clothes",
+    tags: ["shirt"],
+  },
+  {
+    src: "friend164.gif",
+    name: "car driving",
+    tags: [],
+  },
 ];

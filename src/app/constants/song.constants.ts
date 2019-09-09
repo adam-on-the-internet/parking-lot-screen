@@ -22,7 +22,7 @@ export const FEELS: Song =     {
 
 export const SHIRT: Song =     {
     name: "do i like you or do i like your shirt",
-    tags: [],
+    tags: ["shirt", "love"],
 };
 
 export const AUNT: Song =     {

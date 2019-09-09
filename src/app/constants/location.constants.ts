@@ -383,5 +383,29 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
     name: "distant hearts",
     tags: ["love"],
   },
-
+  {
+    src: "z16.jpg",
+    name: "shirts 1",
+    tags: ["shirt"],
+  },
+  {
+    src: "z17.jpg",
+    name: "shirts 2",
+    tags: ["shirt"],
+  },
+  {
+    src: "z18.jpg",
+    name: "shirts 3",
+    tags: ["shirt"],
+  },
+  {
+    src: "z19.jpg",
+    name: "shirts 4",
+    tags: ["shirt"],
+  },
+  {
+    src: "z20.gif",
+    name: "clothes assortment",
+    tags: ["shirt"],
+  },
 ];
