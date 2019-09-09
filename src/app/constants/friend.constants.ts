@@ -626,4 +626,50 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
     name: "garfield lasagna",
     tags: ["cooking", "cartoon"],
   },
+  {
+    src: "friend134.gif",
+    name: "aunt",
+    tags: ["aunt"],
+  },
+  {
+    src: "friend135.gif",
+    name: "I love being an aunt",
+    tags: ["aunt"],
+  },
+  {
+    src: "friend136.gif",
+    name: "wine shine",
+    tags: ["aunt"],
+  },
+  {
+    src: "friend137.gif",
+    name: "wine love",
+    tags: ["aunt"],
+  },
+  {
+    src: "friend138.gif",
+    name: "wine pour",
+    tags: ["aunt"],
+  },
+  {
+    src: "friend139.gif",
+    name: "family 1",
+    tags: ["aunt"],
+  },
+  {
+    src: "friend140.gif",
+    name: "family 2",
+    tags: ["aunt"],
+  },
+  {
+    src: "friend141.gif",
+    name: "walking family",
+    tags: ["aunt"],
+  },
+  {
+    src: "friend142.gif",
+    name: "My Family",
+    tags: ["aunt"],
+  },
+
 ];

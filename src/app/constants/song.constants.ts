@@ -27,7 +27,7 @@ export const SHIRT: Song =     {
 
 export const AUNT: Song =     {
     name: "not your aunt",
-    tags: [],
+    tags: ["aunt"],
 };
 
 export const VAGUE: Song =     {

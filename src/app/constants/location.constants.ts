@@ -343,5 +343,29 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
     name: "ratatouille",
     tags: ["cooking"],
   },
-
+  {
+    src: "z8.jpg",
+    name: "wine aunt",
+    tags: ["aunt"],
+  },
+  {
+    src: "z9.jpg",
+    name: "family zoo",
+    tags: ["aunt"],
+  },
+  {
+    src: "z10.jpg",
+    name: "family park",
+    tags: ["aunt"],
+  },
+  {
+    src: "z11.jpg",
+    name: "family photo",
+    tags: ["aunt"],
+  },
+  {
+    src: "z12.jpg",
+    name: "Aunt better than Mom",
+    tags: ["aunt"],
+  },
 ];
