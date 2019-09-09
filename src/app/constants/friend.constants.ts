@@ -424,7 +424,7 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
   {
     src: "friend87.gif",
     name: "Spooky Red Eyes",
-    tags: ["spooky"],
+    tags: ["spooky", "eyes"],
   },
   {
     src: "friend88.gif",
@@ -696,4 +696,45 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
     name: "snowflake 5",
     tags: ["snow"],
   },
+  {
+    src: "friend148.gif",
+    name: "black and white eye",
+    tags: ["eyes"],
+  },
+  {
+    src: "friend149.gif",
+    name: "rogue eyes",
+    tags: ["eyes"],
+  },
+  {
+    src: "friend150.gif",
+    name: "goofy eyes",
+    tags: ["eyes"],
+  },
+  {
+    src: "friend151.gif",
+    name: "searching eyes",
+    tags: ["eyes"],
+  },
+  {
+    src: "friend152.gif",
+    name: "one goofy eye",
+    tags: ["eyes"],
+  },
+  {
+    src: "friend153.gif",
+    name: "blinking eye",
+    tags: ["eyes"],
+  },
+  {
+    src: "friend154.gif",
+    name: "human eyes",
+    tags: ["eyes"],
+  },
+  {
+    src: "friend155.gif",
+    name: "alien eyes",
+    tags: ["eyes", "alien"],
+  },
+
 ];

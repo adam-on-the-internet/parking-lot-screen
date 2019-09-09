@@ -373,4 +373,15 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
     name: "Snow falling",
     tags: ["snow"],
   },
+  {
+    src: "z14.jpg",
+    name: "plastic hearts",
+    tags: ["love"],
+  },
+  {
+    src: "z15.jpg",
+    name: "distant hearts",
+    tags: ["love"],
+  },
+
 ];
