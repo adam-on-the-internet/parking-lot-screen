@@ -671,5 +671,29 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
     name: "My Family",
     tags: ["aunt"],
   },
-
+  {
+    src: "friend143.gif",
+    name: "snowflake 1",
+    tags: ["snow"],
+  },
+  {
+    src: "friend144.gif",
+    name: "snowflake 2",
+    tags: ["snow"],
+  },
+  {
+    src: "friend145.gif",
+    name: "snowflake 3",
+    tags: ["snow"],
+  },
+  {
+    src: "friend146.gif",
+    name: "snowflake 4",
+    tags: ["snow"],
+  },
+  {
+    src: "friend147.gif",
+    name: "snowflake 5",
+    tags: ["snow"],
+  },
 ];

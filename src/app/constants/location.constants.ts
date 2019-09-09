@@ -368,4 +368,9 @@ export const LOCATION_IMAGES_DECK: DetailedImage[] = [
     name: "Aunt better than Mom",
     tags: ["aunt"],
   },
+  {
+    src: "z13.gif",
+    name: "Snow falling",
+    tags: ["snow"],
+  },
 ];

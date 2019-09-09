@@ -47,7 +47,7 @@ export const DOG: Song = {
 
 export const JOHNNY: Song = {
     name: "oh johnny",
-    tags: [],
+    tags: ["snow"],
 };
 
 export const THEME: Song = {
