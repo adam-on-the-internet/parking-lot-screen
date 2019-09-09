@@ -7,7 +7,7 @@ export const DISCLAIMER: Song =     {
 
 export const EYES: Song =     {
     name: "alien pt. 1: in your eyes",
-    tags: ["alien"],
+    tags: ["love", "eyes"],
 };
 
 export const LOVER: Song =     {

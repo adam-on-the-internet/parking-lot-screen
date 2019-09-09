@@ -4,7 +4,12 @@
 <p>
   Songs:
 </p>
-<button (click)="setSong(song)" *ngFor="let song of songsToDisplay">{{song.name}}</button>
+<ol>
+    <li *ngFor="let song of songsToDisplay">
+
+        <button (click)="setSong(song)" >{{song.name}}</button>
+    </li>
+</ol>
 <p *ngIf="songView">Viewing song: {{songView.name}}</p>
 <hr>
 <ng-container *ngIf="songView">
