@@ -51,7 +51,7 @@ export const JOHNNY: Song = {
 };
 
 export const THEME: Song = {
-    name: "now you're in the parking lot",
+    name: "adam in the parking lot",
     tags: [],
 };
 
@@ -63,6 +63,11 @@ export const CARDIFF: Song = {
 export const LIBERACE: Song = {
     name: "ghost of liberace (sparks cover)",
     tags: ["spooky"],
+}
+
+export const THANKS: Song = {
+    name: "thanks for coming",
+    tags: [],
 }
 
 export const ALL_SONGS: Song[] = [
@@ -79,4 +84,5 @@ export const ALL_SONGS: Song[] = [
     CARDIFF,
     JOHNNY,
     LIBERACE,
+    THANKS,
 ];

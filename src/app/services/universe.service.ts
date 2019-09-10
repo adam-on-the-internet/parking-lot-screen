@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class UniverseService {
   public friendsPerScene = 5;
-  public secondsPerScene = 2;
+  public secondsPerScene = 40;
   public availableSpeeds = 16;
   public availableAnimations = 6;
 }

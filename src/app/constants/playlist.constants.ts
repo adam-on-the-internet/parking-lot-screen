@@ -1,4 +1,4 @@
-import { LOVER, HAUNT, DISCLAIMER, AUNT, VAGUE, DOG, EYES, FEELS, ALL_SONGS, LIBERACE, CARDIFF } from './song.constants';
+import { LOVER, HAUNT, DISCLAIMER, AUNT, VAGUE, DOG, EYES, FEELS, ALL_SONGS, LIBERACE, CARDIFF, THEME, THANKS } from './song.constants';
 import { Playlist } from '../models/Playlist.model';
 
 const TEST_PLAYLIST: Playlist = {
@@ -23,6 +23,7 @@ const STANDARD_PLAYLIST: Playlist = {
 const AQUADOME_SEP_13_19: Playlist = {
     name: "Aquadome 9-13-19",
     songs: [
+        THEME,
         AUNT,
         VAGUE,
         HAUNT,
@@ -33,6 +34,7 @@ const AQUADOME_SEP_13_19: Playlist = {
         LOVER,
         FEELS,
         CARDIFF,
+        THANKS,
     ],
 };
 
