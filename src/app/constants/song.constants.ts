@@ -60,6 +60,11 @@ export const CARDIFF: Song = {
     tags: ["cooking", "cardiff"],
 }
 
+export const LIBERACE: Song = {
+    name: "ghost of liberace (sparks cover)",
+    tags: ["spooky"],
+}
+
 export const ALL_SONGS: Song[] = [
     DISCLAIMER,
     EYES,
