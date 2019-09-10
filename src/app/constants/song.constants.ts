@@ -78,4 +78,5 @@ export const ALL_SONGS: Song[] = [
     THEME,
     CARDIFF,
     JOHNNY,
+    LIBERACE,
 ];
