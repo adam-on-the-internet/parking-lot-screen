@@ -1,4 +1,4 @@
-import { LOVER, HAUNT, DISCLAIMER, AUNT, VAGUE, DOG, EYES, FEELS, CARDIFF, ALL_SONGS } from './song.constants';
+import { LOVER, HAUNT, DISCLAIMER, AUNT, VAGUE, DOG, EYES, FEELS, CARDIFF, ALL_SONGS, LIBERACE } from './song.constants';
 import { Playlist } from '../models/Playlist.model';
 
 const TEST_PLAYLIST: Playlist = {
@@ -26,6 +26,7 @@ const AQUADOME_SEP_13_19: Playlist = {
         AUNT,
         VAGUE,
         HAUNT,
+        LIBERACE,
         DOG,
         DISCLAIMER,
         EYES,
