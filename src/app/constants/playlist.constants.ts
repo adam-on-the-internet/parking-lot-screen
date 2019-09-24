@@ -37,6 +37,23 @@ const AQUADOME_SEP_13_19: Playlist = {
     ],
 };
 
+const MEWS_SEP_25_19: Playlist = {
+    name: "Mews 9-25-19",
+    songs: [
+        THEME,
+        AUNT,
+        SHIRT,
+        HAUNT,
+        DISCLAIMER,
+        EYES,
+        LOVER,
+        FEELS,
+        DOG,
+        VAGUE,
+        THANKS,
+    ],
+};
+
 export const AVAILABLE_PLAYLISTS: Playlist[] = [
     TEST_PLAYLIST,
     STANDARD_PLAYLIST,
