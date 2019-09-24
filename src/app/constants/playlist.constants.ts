@@ -56,6 +56,5 @@ const MEWS_SEP_25_19: Playlist = {
 
 export const AVAILABLE_PLAYLISTS: Playlist[] = [
     TEST_PLAYLIST,
-    STANDARD_PLAYLIST,
-    AQUADOME_SEP_13_19,
+    MEWS_SEP_25_19,
 ];
