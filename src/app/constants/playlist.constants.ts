@@ -25,16 +25,14 @@ const AQUADOME_SEP_13_19: Playlist = {
     songs: [
         THEME,
         AUNT,
-        VAGUE,
         DOG,
         SHIRT,
         HAUNT,
-        LIBERACE,
         DISCLAIMER,
         EYES,
         LOVER,
         FEELS,
-        CARDIFF,
+        VAGUE,
         THANKS,
     ],
 };
