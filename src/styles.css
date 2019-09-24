@@ -243,3 +243,28 @@ img {
 .animation-6 {
   animation-timing-function: ease-in-out;
 }
+.animation-7 {
+  animation-timing-function: linear;
+  animation-direction: reverse;
+}
+.animation-8 {
+  animation-timing-function: ease;
+  animation-direction: reverse;
+}
+.animation-9 {
+  animation-timing-function: ease-in;
+  animation-direction: reverse;
+}
+.animation-10 {
+  animation-timing-function: ease-out;
+  animation-direction: reverse;
+}
+.animation-11 {
+  animation-timing-function: ease-in-out;
+  animation-direction: reverse;
+}
+.animation-12 {
+  animation-timing-function: ease-in-out;
+  animation-direction: reverse;
+}
+
