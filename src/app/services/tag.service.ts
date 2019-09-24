@@ -19,14 +19,13 @@ export class TagService {
 
   public get availableTags(): string[] {
     const _availableTags: string[] = [];
-    const requiredFriends = this.universeService.friendsPerScene;
     
     this.uniqueLocationTags.forEach((locationTag) => {
-      const matchingFriends = this.allFriendTags.filter((friendTag) => {
+      const friendExists = this.allFriendTags.some((friendTag) => {
         return friendTag === locationTag;
       });
 
-      if (matchingFriends.length >= requiredFriends) {
+      if (friendExists) {
         _availableTags.push(locationTag);
       }
     });

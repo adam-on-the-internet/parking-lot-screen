@@ -9,10 +9,6 @@ import { UniverseService } from './universe.service';
 })
 export class FriendService {
 
-  private get friendsPerScene(): number {
-    return this.universeService.friendsPerScene;
-  }
-
   private get availableFriends(): number {
     return this.worldService.friendImageDeck.length;
   }
@@ -22,10 +18,11 @@ export class FriendService {
     private universeService: UniverseService,
   ) { }
 
-  public generateFriends(): Friend[] {
+  public generateFriends(friendCount: number): Friend[] {
     const newFriends: Friend[] = [];
 
-    const newFriendImageIndexes = RandomHelper.pickMultipleRandomUniqueNumbers(0, this.availableFriends, this.friendsPerScene);
+    const newFriendImageIndexes = 
+    RandomHelper.pickMultipleRandomUniqueNumbers(0, this.availableFriends, friendCount);
 
     newFriendImageIndexes.forEach((friendImageIndex) => {
       const friendToAdd: Friend = {

@@ -6,6 +6,7 @@ import { DetailedImage } from '../models/Image.model';
 import { BooleanHelper } from '../helpers/Boolean.helper';
 import { TagService } from './tag.service';
 import { Playlist } from '../models/Playlist.model';
+import { UniverseService } from './universe.service';
 
 @Injectable({
   providedIn: 'root'
@@ -28,8 +29,17 @@ export class WorldService {
     return BooleanHelper.hasValue(this.runningPlaylist);
   }
 
+  public get friendsPerSceneForWorld(): number {
+    let _friendsPerSceneForWorld = this.universeService.friendsPerScene;
+    if (this.friendImageDeck.length < _friendsPerSceneForWorld) {
+      _friendsPerSceneForWorld = this.friendImageDeck.length;
+    }
+    return _friendsPerSceneForWorld;
+  }
+
   constructor(
     public tagService: TagService,
+    private universeService: UniverseService,
   ) {}
 
   public setupPlaylistMode(playlist: Playlist): void {

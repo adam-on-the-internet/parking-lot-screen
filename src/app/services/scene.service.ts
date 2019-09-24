@@ -38,7 +38,7 @@ export class SceneService {
     if (this.worldService.ready) {
       this.detectWorldShift();
       this.scene = {
-        friendList: this.friendService.generateFriends(),
+        friendList: this.friendService.generateFriends(this.worldService.friendsPerSceneForWorld),
         location: this.locationService.generateLocation(this.scene.location.index),
       };
       this.locationService.setupLocation(this.scene.location);
