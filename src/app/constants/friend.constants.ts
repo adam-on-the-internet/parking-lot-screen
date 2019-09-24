@@ -781,4 +781,35 @@ export const FRIEND_IMAGE_LIST: DetailedImage[] = [
     name: "car driving",
     tags: [],
   },
+  {
+    src: "friend165.gif",
+    name: "mean fish",
+    tags: ["bad"],
+  },
+  {
+    src: "friend166.gif",
+    name: "smart horse",
+    tags: ["bad"],
+  },
+  {
+    src: "friend167.gif",
+    name: "spooky word",
+    tags: ["spooky"],
+  },
+  {
+    src: "friend168.gif",
+    name: "zombie grave",
+    tags: [],
+  },
+  {
+    src: "friend169.gif",
+    name: "gay pride flag",
+    tags: [],
+  },
+  {
+    src: "friend170.png",
+    name: "t-pose bayonetta",
+    tags: ["bad", "video-game"],
+  },
+
 ];
