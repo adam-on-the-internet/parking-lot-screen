@@ -1,6 +1,6 @@
 <section id="playlist-mode">
     <h2>Playlist Mode</h2>
-    <p>Show images that match each song.</p>
+    <p>Show images that match each song. Click the song name to move on to the next song.</p>
     <ng-container *ngFor="let playlist of availablePlaylists">
       <app-button (click)="startPlaylistMode(playlist)">
         Start {{playlist.name}} Playlist
