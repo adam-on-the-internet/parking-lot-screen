@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-for-prod": "ng build --prod --base-href=/projects/parking-lot-screen/",
+    "prod-deploy": "scp -r dist/* callanan@ftp.callananconcepts.club:/home1/callanan/public_html/projects/",
+    "full-deploy": "npm run build-for-prod && npm run prod-deploy"
   },
   "private": true,
   "dependencies": {
