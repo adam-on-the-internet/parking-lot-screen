@@ -15,6 +15,7 @@ import { ButtonComponent } from './components/simple/button/button.component';
 import { PopUpComponent } from './components/simple/pop-up/pop-up.component';
 import { SongGalleryComponent } from './components/gallery/song-gallery/song-gallery.component';
 import { AppRoutingModule } from './app-routing.module';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AppRoutingModule } from './app-routing.module';
     StartMenuComponent,
     ButtonComponent,
     PopUpComponent,
-    SongGalleryComponent
+    SongGalleryComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

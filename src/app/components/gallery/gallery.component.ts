@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gallery',
@@ -24,8 +25,17 @@ export class GalleryComponent {
     return this.mode === "SONG";
   }
 
+  constructor(
+    private router: Router,
+  ) {
+  }
+
   public setMode(mode: string): void {
     this.mode = mode;
+  }
+
+  public goToWelcome() {
+    this.router.navigate(["/welcome"]);
   }
 
 }
