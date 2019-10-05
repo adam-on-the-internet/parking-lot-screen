@@ -8,8 +8,10 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 const routes: Routes = [
   { path: "welcome", component: WelcomeComponent },
   { path: "start-menu", component: StartMenuComponent },
-  { path: "universe", component: UniverseComponent },
   { path: "gallery", component: GalleryComponent },
+  { path: "universe", component: UniverseComponent },
+  { path: "universe/:mode", component: UniverseComponent },
+  { path: "universe/:mode/:selection", component: UniverseComponent },
   { path: "**", redirectTo: "welcome" },
 ];
 

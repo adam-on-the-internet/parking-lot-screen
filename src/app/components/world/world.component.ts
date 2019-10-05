@@ -26,6 +26,7 @@ export class WorldComponent implements OnInit {
 
   public ngOnInit() {
     if (!this.worldReady) {
+      console.log("world not ready...");
       this.router.navigate(["/start-menu"]);
     }
   }
