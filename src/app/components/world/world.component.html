@@ -1,10 +1,6 @@
-<h1 id="world-name" *ngIf="worldService.songMode" (click)="nextSong()">
-  {{worldName}}
-</h1>
-<app-scene
-  *ngIf="worldReady; else startMenu"
-></app-scene>
-
-<ng-template #startMenu>
-  <app-start-menu></app-start-menu>
-</ng-template>
+<ng-container *ngIf="worldReady">
+  <h1 id="world-name" *ngIf="worldService.songMode" (click)="nextSong()">
+    {{worldName}}
+  </h1>
+  <app-scene></app-scene>
+</ng-container>

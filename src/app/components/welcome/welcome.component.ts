@@ -13,7 +13,7 @@ export class WelcomeComponent {
   ) {}
 
   public startShow() {
-    this.router.navigate(["/show"]);
+    this.router.navigate(["/start-menu"]);
   }
 
   public startGallery() {
