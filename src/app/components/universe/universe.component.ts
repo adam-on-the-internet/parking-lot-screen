@@ -11,42 +11,47 @@ import { ALL_PLAYLISTS } from 'src/app/constants/playlist.constants';
 })
 export class UniverseComponent implements OnInit {
   public universeReady = true;
+  private mode: string;
+  private selection: string;
 
   constructor(
     private route: ActivatedRoute,
     private tagService: TagService,
     private worldService: WorldService,
-  ) { }
+  ) {}
 
   public ngOnInit() {
+    this.grabTags();
     this.prepareUniverse();
   }
 
+  private grabTags() {
+    this.mode = this.route.snapshot.paramMap.get("mode");
+    this.selection = this.route.snapshot.paramMap.get("selection");
+  }
+
   private prepareUniverse() {
-    const mode = this.route.snapshot.paramMap.get("mode");
-    if (mode === "tag") {
+    this.universeReady = false;
+    if (this.mode === "tag") {
       this.setupTag();
     }
-    if (mode === "playlist") {
+    if (this.mode === "playlist") {
       this.setupPlaylist();
     }
-    if (mode === "free") {
+    if (this.mode === "free") {
       this.worldService.setupFreeMode();
     }
     this.universeReady = true;
   }
 
   private setupTag() {
-    const tag = this.route.snapshot.paramMap.get("selection");
-    if (tag && this.tagService.availableTags.includes(tag)) {
-      this.worldService.setupTagMode(tag);
+    if (this.selection && this.tagService.availableTags.includes(this.selection)) {
+      this.worldService.setupTagMode(this.selection);
     }
   }
   private setupPlaylist() {
-    const playlistKey = this.route.snapshot.paramMap.get("selection");
-
     const playlist = ALL_PLAYLISTS.find((pl) => {
-      return pl.key.toString() === playlistKey;
+      return pl.key.toString() === this.selection;
     });
 
     if (playlist) {
