@@ -40,6 +40,11 @@ export const HAUNT: Song = {
     tags: ["spooky"],
 };
 
+export const SUMMER: Song = {
+    name: "what you did last summer",
+    tags: ["spooky"],
+};
+
 export const DOG: Song = {
     name: "about your dog",
     tags: ["dog"],
@@ -51,38 +56,16 @@ export const JOHNNY: Song = {
 };
 
 export const THEME: Song = {
-    name: "adam in the parking lot",
+    name: "adam in the parking lot (theme song)",
     tags: [],
 };
 
 export const CARDIFF: Song = {
     name: "pasta in cardiff",
     tags: ["cooking", "cardiff"],
-}
-
-export const LIBERACE: Song = {
-    name: "ghost of liberace (sparks cover)",
-    tags: ["spooky"],
-}
+};
 
 export const THANKS: Song = {
-    name: "thanks for coming",
+    name: "thanks for coming, tip your bartenders",
     tags: [],
-}
-
-export const ALL_SONGS: Song[] = [
-    DISCLAIMER,
-    EYES,
-    LOVER,
-    FEELS,
-    VAGUE,
-    AUNT,
-    SHIRT,
-    DOG,
-    HAUNT,
-    THEME,
-    CARDIFF,
-    JOHNNY,
-    LIBERACE,
-    THANKS,
-];
+};

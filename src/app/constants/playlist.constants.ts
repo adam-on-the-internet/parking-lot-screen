@@ -1,10 +1,17 @@
-import { LOVER, HAUNT, DISCLAIMER, AUNT, VAGUE, JOHNNY, DOG, EYES, FEELS, ALL_SONGS, LIBERACE, CARDIFF, THEME, THANKS, SHIRT } from './song.constants';
+import { LOVER, HAUNT, DISCLAIMER, AUNT, VAGUE, JOHNNY, DOG, EYES, FEELS, CARDIFF, THEME, THANKS, SHIRT, SUMMER } from './song.constants';
 import { Playlist } from '../models/Playlist.model';
 
 const TEST_PLAYLIST: Playlist = {
     key: 1,
     name: "Test",
-    songs: ALL_SONGS,
+    songs: [
+        THEME,
+        AUNT,
+        DOG,
+        HAUNT,
+        FEELS,
+        THANKS,
+    ],
 };
 
 const STANDARD_PLAYLIST: Playlist = {
@@ -58,9 +65,51 @@ const MEWS_SEP_25_19: Playlist = {
     ],
 };
 
+const MEWS_APR_29_20: Playlist = {
+    key: 5,
+    name: "Mews April 20th, 2020",
+    songs: [
+        THEME,
+        AUNT,
+        SHIRT,
+        SUMMER,
+        DISCLAIMER,
+        EYES,
+        LOVER,
+        FEELS,
+        JOHNNY,
+        CARDIFF,
+        DOG,
+        VAGUE,
+        THANKS,
+    ],
+};
+
+export const ALL_SONGS_PLAYLIST: Playlist = {
+    key: 99,
+    name: "All Songs Playlist",
+    songs: [
+        THEME,
+        AUNT,
+        SHIRT,
+        DISCLAIMER,
+        EYES,
+        LOVER,
+        FEELS,
+        VAGUE,
+        DOG,
+        HAUNT,
+        CARDIFF,
+        JOHNNY,
+        SUMMER,
+        THANKS,
+    ],
+};
+
 export const AVAILABLE_PLAYLISTS: Playlist[] = [
     TEST_PLAYLIST,
-    MEWS_SEP_25_19,
+    MEWS_APR_29_20,
+    ALL_SONGS_PLAYLIST,
 ];
 
 export const ALL_PLAYLISTS: Playlist[] = [
@@ -68,4 +117,6 @@ export const ALL_PLAYLISTS: Playlist[] = [
     MEWS_SEP_25_19,
     AQUADOME_SEP_13_19,
     STANDARD_PLAYLIST,
+    MEWS_APR_29_20,
+    ALL_SONGS_PLAYLIST,
 ];

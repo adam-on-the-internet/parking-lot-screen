@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Song } from 'src/app/models/Song.model';
-import { ALL_SONGS } from 'src/app/constants/song.constants';
+import { ALL_SONGS_PLAYLIST } from 'src/app/constants/playlist.constants';
 import { DetailedImage } from 'src/app/models/Image.model';
 import { TagService } from 'src/app/services/tag.service';
 
@@ -13,11 +13,11 @@ export class SongGalleryComponent {
   public songView: Song = null;
 
   public get songsToDisplay(): Song[] {
-    return ALL_SONGS;
+    return ALL_SONGS_PLAYLIST.songs;
   }
 
   public get songCount(): number {
-    return ALL_SONGS.length;
+    return ALL_SONGS_PLAYLIST.songs.length;
   }
 
   public get songLocations(): DetailedImage[] {
