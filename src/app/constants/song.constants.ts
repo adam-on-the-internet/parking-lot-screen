@@ -65,6 +65,11 @@ export const CARDIFF: Song = {
     tags: ["cooking", "cardiff"],
 };
 
+export const NEVER: Song = {
+    name: "i never know what to say",
+    tags: [],
+};
+
 export const THANKS: Song = {
     name: "thanks for coming, tip your bartenders",
     tags: [],
