@@ -13,7 +13,8 @@ import {
     THANKS,
     SHIRT,
     SUMMER,
-    NEVER
+    NEVER,
+    BERNIE
 } from './song.constants';
 import { Playlist } from '../models/Playlist.model';
 
@@ -106,6 +107,7 @@ const CRICKET_FEB_22: Playlist = {
         THEME,
         AUNT,
         SHIRT,
+        HAUNT,
         DISCLAIMER,
         EYES,
         LOVER,
@@ -113,9 +115,8 @@ const CRICKET_FEB_22: Playlist = {
         JOHNNY,
         CARDIFF,
         DOG,
-        HAUNT,
         NEVER,
-        THANKS,
+        BERNIE,
     ]
 };
 
@@ -138,6 +139,7 @@ export const ALL_SONGS_PLAYLIST: Playlist = {
         SUMMER,
         NEVER,
         THANKS,
+        BERNIE,
     ],
 };
 

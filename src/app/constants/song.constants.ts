@@ -74,3 +74,8 @@ export const THANKS: Song = {
     name: "thanks for coming, tip your bartenders",
     tags: [],
 };
+
+export const BERNIE: Song = {
+    name: "thanks for coming, vote Bernie",
+    tags: [],
+};
