@@ -1,1 +1,13 @@
-<router-outlet></router-outlet>
+<router-outlet *ngIf="showUniverse"></router-outlet>
+
+<p *ngIf="showAssetOptions">
+  Please select an asset source:
+  <br>
+  <button (click)="setOnline()">Online</button>
+  <br>
+  <button (click)="setOffline()">Offline</button>
+</p>
+
+<p *ngIf="showLoading">
+  Loading...
+</p>
