@@ -1,12 +1,23 @@
 <router-outlet *ngIf="showUniverse"></router-outlet>
 
-<p *ngIf="showAssetOptions">
-  Please select an asset source:
-  <br>
-  <button (click)="setOnline()">Online</button>
-  <br>
-  <button (click)="setOffline()">Offline</button>
-</p>
+<ng-container *ngIf="showAssetOptions">
+  <section id="app-header">
+    <h1>Online / Offline</h1>
+    <p>
+      Which assets would you like to use?
+    </p>
+  </section>
+  <p>
+    <app-button (click)="setOnline()">
+      Set Online Assets
+    </app-button>
+  </p>
+  <p>
+    <app-button (click)="setOffline()">
+      Set Offline Assets
+    </app-button>
+  </p>
+</ng-container>
 
 <p *ngIf="showLoading">
   Loading...

@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   public offerAssetChoice = false;
 
   public get showUniverse(): boolean {
-    return this.settingsService.assetModeSet;
+    return this.settingsService.assetModeSet && this.assetService.assetsLoaded;
   }
 
   public get showAssetOptions(): boolean {
@@ -22,9 +22,7 @@ export class AppComponent implements OnInit {
   }
 
   public get showLoading(): boolean {
-    const checkingOnline = !this.showAssetOptions && !this.showUniverse;
-    const loadingAssets = this.settingsService.assetModeSet && !this.assetService.assetsLoaded;
-    return checkingOnline || loadingAssets;
+    return !this.showUniverse && !this.showAssetOptions;
   }
 
   constructor(

@@ -36,9 +36,11 @@ export class AssetService {
     this.friends = assets.filter((asset) => {
       return asset.tags.includes("friend");
     });
+    console.log("LOADED " + this.friends.length + " friend(s)");
     this.locations = assets.filter((asset) => {
       return asset.tags.includes("background");
     });
+    console.log("LOADED " + this.locations.length + " location(s)");
   }
 
   private loadAssets(): Observable<any> {
