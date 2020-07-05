@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable, of} from "rxjs";
 import {SettingsService} from "./settings.service";
 import {DetailedImage} from "../models/Image.model";
+import {ASSETS} from "../../assets/catalog.constants";
 
 @Injectable({
   providedIn: 'root'
@@ -52,7 +53,7 @@ export class AssetService {
   }
 
   private loadOfflineAssets() {
-    return of([]);
+    return of(ASSETS);
   }
 
   private loadOnlineAssets() {
