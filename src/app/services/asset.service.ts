@@ -81,7 +81,7 @@ export class AssetService {
 
   private setAssetSource(assets: DetailedImage[]) {
     const onlineSource = "https://blissful-newton-edf9e2.netlify.app/assets";
-    const offlineSource = "assets/";
+    const offlineSource = "assets/offline-assets/";
     const path = this.online ? onlineSource : offlineSource;
     assets.forEach((asset) => {
       asset.src = path + asset.src;
