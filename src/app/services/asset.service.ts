@@ -1,9 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable, of} from "rxjs";
+import {Observable} from "rxjs";
 import {SettingsService} from "./settings.service";
 import {DetailedImage} from "../models/Image.model";
-import {ASSETS} from "../../assets/catalog.constants";
 
 @Injectable({
   providedIn: 'root'
@@ -58,16 +57,10 @@ export class AssetService {
     });
   }
 
-  private loadAssets(): Observable<any> {
-    if (this.settingsService.useOnlineAssets) {
-      return this.loadOnlineAssets();
-    } else {
-      return of(ASSETS);
-    }
-  }
-
-  private loadOnlineAssets() {
-    const url = "https://adam-on-the-internet.github.io/asset-reader/catalog.json";
-    return this.http.get(url) as Observable<any>;
+  private loadAssets(): Observable<DetailedImage[]> {
+    const onlineUrl = "https://adam-on-the-internet.github.io/asset-reader/catalog.json";
+    const offlineUrl = "../../assets/offline-assets/catalog.json";
+    const url = this.settingsService.useOnlineAssets ? onlineUrl : offlineUrl;
+    return this.http.get(url) as Observable<DetailedImage[]>;
   }
 }
