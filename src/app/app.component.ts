@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SettingsService} from "./services/settings.service";
 import {ActuatorService} from "./services/actuator.service";
+import {AssetService} from "./services/asset.service";
 
 @Component({
   selector: 'app-root',
@@ -21,11 +22,14 @@ export class AppComponent implements OnInit {
   }
 
   public get showLoading(): boolean {
-    return !this.showAssetOptions && !this.showUniverse;
+    const checkingOnline = !this.showAssetOptions && !this.showUniverse;
+    const loadingAssets = this.settingsService.assetModeSet && !this.assetService.assetsLoaded;
+    return checkingOnline || loadingAssets;
   }
 
   constructor(
     private settingsService: SettingsService,
+    private assetService: AssetService,
     private actuatorService: ActuatorService,
   ) {
   }
@@ -36,10 +40,12 @@ export class AppComponent implements OnInit {
 
   public setOnline() {
     this.settingsService.setAssetsOnline();
+    this.assetService.setupAssets();
   }
 
   public setOffline() {
     this.settingsService.setAssetsOffline();
+    this.assetService.setupAssets();
   }
 
   private checkIfOnline() {
