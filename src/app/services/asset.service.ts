@@ -33,7 +33,12 @@ export class AssetService {
         });
   }
 
-  private applyAssets(assets) {
+  private applyAssets(assets: DetailedImage[]) {
+    this.setAssetSource(assets);
+    this.sortAssets(assets);
+  }
+
+  private sortAssets(assets: DetailedImage[]) {
     this.friends = assets.filter((asset) => {
       return asset.tags.includes("friend");
     });
@@ -44,16 +49,21 @@ export class AssetService {
     console.log("LOADED " + this.locations.length + " location(s)");
   }
 
+  private setAssetSource(assets: DetailedImage[]) {
+    const onlineSource = "https://blissful-newton-edf9e2.netlify.app/assets";
+    const offlineSource = "assets/friends/";
+    const path = this.settingsService.useOnlineAssets ? onlineSource : offlineSource;
+    assets.forEach((asset) => {
+      asset.src = path + asset.src;
+    });
+  }
+
   private loadAssets(): Observable<any> {
     if (this.settingsService.useOnlineAssets) {
       return this.loadOnlineAssets();
     } else {
-      return this.loadOfflineAssets();
+      return of(ASSETS);
     }
-  }
-
-  private loadOfflineAssets() {
-    return of(ASSETS);
   }
 
   private loadOnlineAssets() {

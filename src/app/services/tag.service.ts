@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
-import { DetailedImage } from '../models/Image.model';
-import { FRIEND_IMAGE_LIST } from '../constants/friend.constants';
-import { LOCATION_IMAGES_DECK } from '../constants/location.constants';
-import { UniverseService } from './universe.service';
+import {Injectable} from '@angular/core';
+import {DetailedImage} from '../models/Image.model';
+import {UniverseService} from './universe.service';
+import {AssetService} from "./asset.service";
 
 @Injectable({
   providedIn: 'root'
@@ -10,16 +9,16 @@ import { UniverseService } from './universe.service';
 export class TagService {
 
   public getFriendImagesFromTags(matchTags: string[]): DetailedImage[] {
-    return this.getImagesFromListByTags(matchTags, FRIEND_IMAGE_LIST);
+    return this.getImagesFromListByTags(matchTags, this.assetService.friends);
   }
 
   public getLocationImagesFromTags(matchTags: string[]): DetailedImage[] {
-    return this.getImagesFromListByTags(matchTags, LOCATION_IMAGES_DECK);
+    return this.getImagesFromListByTags(matchTags, this.assetService.locations);
   }
 
   public get availableTags(): string[] {
     const _availableTags: string[] = [];
-    
+
     this.uniqueLocationTags.forEach((locationTag) => {
       const friendExists = this.allFriendTags.some((friendTag) => {
         return friendTag === locationTag;
@@ -34,27 +33,29 @@ export class TagService {
   }
 
   public get uniqueLocationTags(): string[] {
-    return this.findUniqueTagsFromDetailedImageList(LOCATION_IMAGES_DECK);
+    return this.findUniqueTagsFromDetailedImageList(this.assetService.locations);
   }
 
   public get uniqueFriendTags(): string [] {
-    return this.findUniqueTagsFromDetailedImageList(FRIEND_IMAGE_LIST);
+    return this.findUniqueTagsFromDetailedImageList(this.assetService.friends);
   }
 
   private get allFriendTags(): string[] {
-    return this.findAllTagsFromDetailedImageList(FRIEND_IMAGE_LIST);
+    return this.findAllTagsFromDetailedImageList(this.assetService.friends);
   }
 
   constructor(
     private universeService: UniverseService,
-  ){}
+    private assetService: AssetService,
+  ) {
+  }
 
 
   private getImagesFromListByTags(matchTags: string[], imageList: DetailedImage[]): DetailedImage[] {
     if (matchTags.length === 0) {
       return imageList;
     }
-    
+
     return imageList.filter((image) => {
       return image.tags.some((imageTag) => {
         return matchTags.includes(imageTag);

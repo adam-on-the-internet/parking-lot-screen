@@ -24,6 +24,6 @@ export class LocationService {
   }
 
   public setupLocation(location: SceneLocation): void {
-    DomHelper.setBackground("assets/locations/" + location.image.src);
+    DomHelper.setBackground(location.image.src);
   }
 }

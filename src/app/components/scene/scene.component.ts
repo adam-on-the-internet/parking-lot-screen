@@ -10,7 +10,7 @@ import { LocationService } from 'src/app/services/location.service';
 export class SceneComponent implements OnInit {
 
   public get backgroundImage(): string {
-    return `url(assets/location/${this.sceneService.scene.location.image.src})`;
+    return `url(${this.sceneService.scene.location.image.src})`;
   }
 
   public get imageSource(): string {

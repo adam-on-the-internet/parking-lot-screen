@@ -1,12 +1,11 @@
-import { Injectable } from '@angular/core';
-import { RandomHelper } from '../helpers/Random.helper';
-import { FRIEND_IMAGE_LIST } from '../constants/friend.constants';
-import { LOCATION_IMAGES_DECK } from '../constants/location.constants';
-import { DetailedImage } from '../models/Image.model';
-import { BooleanHelper } from '../helpers/Boolean.helper';
-import { TagService } from './tag.service';
-import { Playlist } from '../models/Playlist.model';
-import { UniverseService } from './universe.service';
+import {Injectable} from '@angular/core';
+import {RandomHelper} from '../helpers/Random.helper';
+import {DetailedImage} from '../models/Image.model';
+import {BooleanHelper} from '../helpers/Boolean.helper';
+import {TagService} from './tag.service';
+import {Playlist} from '../models/Playlist.model';
+import {UniverseService} from './universe.service';
+import {AssetService} from "./asset.service";
 
 @Injectable({
   providedIn: 'root'
@@ -40,7 +39,9 @@ export class WorldService {
   constructor(
     public tagService: TagService,
     private universeService: UniverseService,
-  ) {}
+    private assetService: AssetService,
+  ) {
+  }
 
   public setupPlaylistMode(playlist: Playlist): void {
     this.runningPlaylist = playlist;
@@ -52,7 +53,8 @@ export class WorldService {
     this.currentSongNumber++;
     if (this.currentSongNumber >= this.runningPlaylist.songs.length) {
       this.currentSongNumber = 0;
-    };
+    }
+    ;
     this.setupSongWorld();
   }
 
@@ -79,7 +81,7 @@ export class WorldService {
 
   private setupTagWorld(tag: string): void {
     this.name = tag;
-    
+
     const tagFriends = this.tagService.getFriendImagesFromTags([tag]);
     const tagLocations = this.tagService.getLocationImagesFromTags([tag]);
 
@@ -90,7 +92,7 @@ export class WorldService {
 
   private setupOpenWorld(): void {
     this.name = "FREE MODE";
-    this.setupWorld(FRIEND_IMAGE_LIST, LOCATION_IMAGES_DECK);
+    this.setupWorld(this.assetService.friends, this.assetService.locations);
     console.log(`Setting up ${this.name}...`);
   }
 

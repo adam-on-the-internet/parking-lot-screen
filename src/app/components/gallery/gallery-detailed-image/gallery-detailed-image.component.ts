@@ -12,6 +12,6 @@ export class GalleryDetailedImageComponent {
   @Input() index: number;
 
   public get fullSrc(): string {
-    return `assets/${this.imageLibrary}/${this.detailedImage.src}`;
+    return `${this.detailedImage.src}`;
   }
 }
