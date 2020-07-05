@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {SettingsService} from "./settings.service";
 import {DetailedImage} from "../models/Image.model";
+import {ActuatorService} from "./actuator.service";
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,9 @@ import {DetailedImage} from "../models/Image.model";
 export class AssetService {
   public friends: DetailedImage[] = null;
   public locations: DetailedImage[] = null;
+  public error = false;
+
+  private online = true;
 
   public get assetsLoaded(): boolean {
     return this.friends !== null && this.locations !== null;
@@ -17,17 +20,45 @@ export class AssetService {
 
   constructor(
     private http: HttpClient,
-    private settingsService: SettingsService,
+    private actuatorService: ActuatorService,
   ) {
   }
 
   public setupAssets() {
     let assets;
-    this.loadAssets()
+    this.actuatorService.checkHealth()
       .subscribe((res) => assets = res,
         (error) => {
-          console.log("ERR");
+          this.tryLoadingOffline()
         }, () => {
+          this.tryLoadingOnline();
+        });
+  }
+
+  private tryLoadingOnline() {
+    let assets;
+    this.loadAssetsOnline()
+      .subscribe((res) => assets = res,
+        (error) => {
+          this.error = true;
+          console.log("NO ASSETS AVAILABLE");
+        }, () => {
+          this.online = true;
+          console.log("loading online assets...");
+          this.applyAssets(assets);
+        });
+  }
+
+  private tryLoadingOffline() {
+    let assets;
+    this.loadAssetsOffline()
+      .subscribe((res) => assets = res,
+        (error) => {
+          this.error = true;
+          console.log("NO ASSETS AVAILABLE");
+        }, () => {
+          this.online = false;
+          console.log("loading offline assets...");
           this.applyAssets(assets);
         });
   }
@@ -51,16 +82,19 @@ export class AssetService {
   private setAssetSource(assets: DetailedImage[]) {
     const onlineSource = "https://blissful-newton-edf9e2.netlify.app/assets";
     const offlineSource = "assets/";
-    const path = this.settingsService.useOnlineAssets ? onlineSource : offlineSource;
+    const path = this.online ? onlineSource : offlineSource;
     assets.forEach((asset) => {
       asset.src = path + asset.src;
     });
   }
 
-  private loadAssets(): Observable<DetailedImage[]> {
-    const onlineUrl = "https://adam-on-the-internet.github.io/asset-reader/catalog.json";
+  private loadAssetsOffline(): Observable<DetailedImage[]> {
     const offlineUrl = "../../assets/offline-assets/catalog.json";
-    const url = this.settingsService.useOnlineAssets ? onlineUrl : offlineUrl;
-    return this.http.get(url) as Observable<DetailedImage[]>;
+    return this.http.get(offlineUrl) as Observable<DetailedImage[]>;
+  }
+
+  private loadAssetsOnline(): Observable<DetailedImage[]> {
+    const onlineUrl = "https://adam-on-the-internet.github.io/asset-reader/catalog.json";
+    return this.http.get(onlineUrl) as Observable<DetailedImage[]>;
   }
 }
