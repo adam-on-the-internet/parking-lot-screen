@@ -1,20 +1,20 @@
 import {
-    LOVER,
-    HAUNT,
-    DISCLAIMER,
-    AUNT,
-    VAGUE,
-    JOHNNY,
-    DOG,
-    EYES,
-    FEELS,
-    CARDIFF,
-    THEME,
-    THANKS,
-    SHIRT,
-    SUMMER,
-    NEVER,
-    BERNIE
+  LOVER,
+  HAUNT,
+  DISCLAIMER,
+  AUNT,
+  VAGUE,
+  JOHNNY,
+  DOG,
+  EYES,
+  FEELS,
+  CARDIFF,
+  THEME,
+  THANKS,
+  SHIRT,
+  SUMMER,
+  NEVER,
+  BERNIE, MEDIOCRE, HATE, EVERYWHERE
 } from './song.constants';
 import { Playlist } from '../models/Playlist.model';
 
@@ -120,6 +120,20 @@ const CRICKET_FEB_22: Playlist = {
     ]
 };
 
+const LIFT_PLAYLIST_NOV_5_24: Playlist = {
+    key: 7,
+    name: "LiFT playlist November 5, 2020",
+    songs: [
+        THEME,
+        AUNT,
+        SHIRT,
+        MEDIOCRE,
+        HATE,
+        FEELS,
+        EVERYWHERE,
+    ]
+};
+
 export const ALL_SONGS_PLAYLIST: Playlist = {
     key: 99,
     name: "All Songs Playlist",
@@ -150,6 +164,7 @@ export const AVAILABLE_PLAYLISTS: Playlist[] = [
 ];
 
 export const ALL_PLAYLISTS: Playlist[] = [
+    LIFT_PLAYLIST_NOV_5_24,
     TEST_PLAYLIST,
     MEWS_SEP_25_19,
     AQUADOME_SEP_13_19,
