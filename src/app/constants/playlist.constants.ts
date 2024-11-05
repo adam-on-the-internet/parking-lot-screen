@@ -134,6 +134,7 @@ const LIFT_PLAYLIST_NOV_5_24: Playlist = {
     HATE,
     FEELS,
     EVERYWHERE,
+    HAUNT,
   ]
 };
 
